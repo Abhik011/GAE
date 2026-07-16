@@ -1,0 +1,58 @@
+import { Wheat, Leaf, Package, Apple, Droplets, Coffee } from "lucide-react";
+
+export const products = [
+  {
+    slug: "basmati-rice",
+    title: "Basmati Rice",
+    description: "Premium long-grain aromatic rice for global markets.",
+    image: "/images/products/basmati-rice.jpg",
+    category: "Agriculture",
+    icon: Wheat,
+    href: "/products/basmati-rice",
+  },
+  {
+    slug: "turmeric",
+    title: "Turmeric",
+    category: "Agriculture",
+    description: "High-curcumin turmeric fingers and powder.",
+    image: "/images/products/turmeric.jpg",
+    icon: Leaf,
+    href: "/products/turmeric",
+  },
+  {
+    slug: "cumin",
+    title: "Cumin Seeds",
+    category: "Agriculture",
+    description: "Export-quality whole cumin seeds.",
+    image: "/images/products/cumin.jpg",
+    icon: Package,
+    href: "/products/cumin",
+  },
+  {
+    slug: "red-chilli",
+    title: "Red Chilli",
+    category: "Agriculture",
+    description: "Premium Indian dried red chilli.",
+    image: "/images/products/red-chilli.jpg",
+    icon: Apple,
+    href: "/products/red-chilli",
+  },
+  {
+    slug: "coffee",
+    title: "Coffee Beans",
+    category: "Food Products",
+    description: "Arabica and Robusta coffee beans.",
+    image: "/images/products/coffee.jpg",
+    icon: Coffee,
+    href: "/products/coffee",
+  },
+  {
+    slug: "honey",
+    title: "Natural Honey",
+    category: "Food Products",
+    description: "Pure export-quality natural honey.",
+    image: "/images/products/honey.jpg",
+    icon: Droplets,
+    href: "/products/honey",
+  },
+];
