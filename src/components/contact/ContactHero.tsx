@@ -34,7 +34,7 @@ export default function ContactHero() {
               </h3>
 
               <p className="mt-2 text-sm text-muted-foreground">
-                info@GlobalAtlas Exim.com
+                info@Globalatlas.in
               </p>
             </div>
 

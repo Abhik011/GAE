@@ -74,13 +74,13 @@ export default function FooterBrand() {
         </div>
 
         <Link
-          href="https://www.GlobalAtlas Exim.in"
+          href="https://www.globalatlas.in"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-3 text-slate-400 transition hover:text-white"
         >
           <Globe className="size-4 shrink-0 text-primary" />
-          <span>www.GlobalAtlas Exim.in</span>
+          <span>www.globalatlas.in</span>
         </Link>
 
       </div>
