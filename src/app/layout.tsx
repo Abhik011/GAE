@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import LayoutWrapper from "@/components/LayoutWrapper";
 
-import  Header  from "../components/layout/Header";
-import  Footer  from "../components/footer/Footer";
 
 import { inter, manrope } from "../lib/fonts";
 
@@ -106,13 +105,7 @@ export default function RootLayout({
           antialiased
         `}
       >
-        <Header />
-
-        <main>
-          {children}
-        </main>
-
-        <Footer />
+<LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
   );

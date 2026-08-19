@@ -12,87 +12,74 @@ const faqs = [
   {
     question: "Is requesting a quotation free?",
     answer:
-      "Yes. Requesting a quotation from GlobalAtlas Exim is completely free with no obligation. Our team reviews your requirements and connects you with suitable verified manufacturers.",
+      "Yes. Requesting a quotation is completely free and comes with no obligation.",
   },
   {
     question: "How quickly will I receive a response?",
     answer:
-      "Most quote requests receive an initial response within 24–48 business hours. Complex sourcing requirements may require additional time.",
+      "Most requests receive an initial response within 24–48 business hours.",
   },
   {
     question: "Can you source custom or OEM products?",
     answer:
-      "Yes. We work with manufacturers that offer OEM, ODM, and private-label manufacturing tailored to your specifications.",
+      "Yes. We can help source suitable manufacturers for OEM, ODM, and private-label requirements.",
   },
   {
-    question: "Do you verify all suppliers?",
+    question: "Do you verify suppliers?",
     answer:
-      "Yes. We work with carefully selected manufacturers and evaluate them based on production capability, export readiness, certifications, and quality standards.",
+      "We evaluate suitable manufacturers based on factors such as capability, quality standards, certifications, and export readiness.",
   },
   {
     question: "Can you arrange product inspections?",
     answer:
-      "Yes. We can coordinate pre-production, in-process, and pre-shipment inspections to help ensure products meet your quality expectations.",
+      "Yes. We can support coordination of inspections and quality checks before shipment.",
   },
   {
-    question: "Do you handle export documentation?",
+    question: "Do you support export documentation?",
     answer:
-      "Yes. We assist with export documentation, customs paperwork, certificates, freight coordination, and international shipping support.",
+      "Yes. We assist with coordinating export documentation and shipping requirements.",
   },
   {
-    question: "Which countries do you export to?",
+    question: "Which countries do you serve?",
     answer:
-      "We support buyers across the world, subject to destination-country regulations and logistics availability.",
+      "We support international buyers, subject to destination regulations and logistics availability.",
   },
   {
-    question: "What information should I include in my quote request?",
+    question: "What should I include in my quote request?",
     answer:
-      "Include product specifications, quantity, destination country, target price (if available), certifications, packaging requirements, and any drawings or reference images. The more information you provide, the more accurate your quotation will be.",
+      "Include product details, quantity, destination, specifications, certifications, and any relevant reference files.",
   },
 ];
 
 export default function QuoteFAQ() {
   return (
-    <section className="bg-slate-50 py-28">
-
+    <section className="bg-white py-20 lg:py-28">
       <Container>
-
         <SectionHeader
           badge="FAQ"
           title="Frequently Asked Questions"
-          description="Everything you need to know before requesting a quotation from GlobalAtlas Exim."
+          description="Everything you need to know before requesting a quote."
         />
 
-        <div className="mx-auto mt-16 max-w-5xl">
-
-          <Accordion
-           
-            className="space-y-5"
-          >
+        <div className="mx-auto mt-14 max-w-4xl">
+          <Accordion className="border-t border-slate-200">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={faq.question}
                 value={`faq-${index}`}
-                className="
-                  overflow-hidden
-                  rounded-[30px]
-                  border
-                  border-border
-                  bg-white
-                  px-8
-                  shadow-sm
-                  transition-all
-                  duration-300
-                  hover:border-primary/20
-                  hover:shadow-lg
-                "
+                className="border-b border-slate-200"
               >
                 <AccordionTrigger
                   className="
-                    py-7
+                    py-6
                     text-left
-                    text-lg
+                    font-heading
+                    text-base
                     font-semibold
+                    text-[#132838]
+                    transition-colors
+                    hover:text-[#2f7d5c]
+                    sm:text-lg
                   "
                 >
                   {faq.question}
@@ -100,10 +87,12 @@ export default function QuoteFAQ() {
 
                 <AccordionContent
                   className="
-                    pb-7
-                    text-base
-                    leading-8
-                    text-muted-foreground
+                    max-w-3xl
+                    pb-6
+                    text-sm
+                    leading-7
+                    text-slate-500
+                    sm:text-base
                   "
                 >
                   {faq.answer}
@@ -111,11 +100,8 @@ export default function QuoteFAQ() {
               </AccordionItem>
             ))}
           </Accordion>
-
         </div>
-
       </Container>
-
     </section>
   );
 }

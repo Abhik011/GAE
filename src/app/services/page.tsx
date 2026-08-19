@@ -1,5 +1,5 @@
 import ServicesHero from "@/components/services/ServicesHero";
-import ServicesGrid from "@/components/services/ServiceGrid";
+import ServicesGrid from "@/components/services/ServicesGrid";
 import WhyChooseUs from "@/components/services/WhyChooseUs";
 import SourcingProcess from "@/components/services/SourcingProcess";
 import IndustriesServed from "@/components/services/IndustriesServed";
@@ -10,17 +10,11 @@ export default function ServicesPage() {
   return (
     <>
       <ServicesHero />
-
       <ServicesGrid />
-
       <WhyChooseUs />
-
       <SourcingProcess />
-
-      <IndustriesServed />
-
+     
       <ServicesFAQ />
-
       <ServicesCTA />
     </>
   );

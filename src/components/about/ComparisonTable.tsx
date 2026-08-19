@@ -29,29 +29,39 @@ const comparison = [
 
 export default function ComparisonTable() {
   return (
-    <div className="overflow-hidden rounded-[32px] border border-border bg-white shadow-sm">
+    <div className="w-full overflow-hidden border border-slate-200 bg-white">
+      {/* Header */}
+      <div className="grid border-b border-slate-200 lg:grid-cols-2">
+        <div className="bg-[#f8faf9] px-6 py-5 lg:px-8">
+          <span className="text-[10px] font-bold tracking-[0.22em] text-slate-400">
+            TRADITIONAL APPROACH
+          </span>
 
-      <div className="grid bg-slate-50 p-6 font-bold lg:grid-cols-2">
-
-        <div>Traditional Sourcing</div>
-
-        <div className="text-primary">
-          GlobalAtlas Exim
+          <p className="mt-2 font-heading text-lg font-bold tracking-[-0.02em] text-[#132838]">
+            Traditional Sourcing
+          </p>
         </div>
 
+        <div className="border-t border-slate-200 bg-[#eef7f1] px-6 py-5 lg:border-l lg:border-t-0 lg:px-8">
+          <span className="text-[10px] font-bold tracking-[0.22em] text-[#2f7d5c]">
+            THE GLOBALATLAS WAY
+          </span>
+
+          <p className="mt-2 font-heading text-lg font-bold tracking-[-0.02em] text-[#132838]">
+            GlobalAtlas Exim
+          </p>
+        </div>
       </div>
 
-      <div className="px-8">
-
-        {comparison.map((item) => (
-          <ComparisonItem
-            key={item.traditional}
-            {...item}
-          />
-        ))}
-
-      </div>
-
+      {/* Rows */}
+      {comparison.map((item, index) => (
+        <ComparisonItem
+          key={item.traditional}
+          index={index + 1}
+          traditional={item.traditional}
+          GlobalAtlasExim={item.GlobalAtlasExim}
+        />
+      ))}
     </div>
   );
 }

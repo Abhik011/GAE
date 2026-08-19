@@ -17,7 +17,7 @@ const sections = [
     links: [
       ["Basmati Rice", "/products/basmati-rice"],
       ["Turmeric", "/products/turmeric"],
-      ["Cumin Seeds", "/products/cumin"],
+      ["Cumin Seeds", "/products/cumin-seeds"],
       ["Red Chilli", "/products/red-chilli"],
       ["Coffee Beans", "/products/coffee"],
       ["Natural Honey", "/products/honey"],

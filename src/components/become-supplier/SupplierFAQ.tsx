@@ -53,69 +53,76 @@ const faqs = [
 
 export default function SupplierFAQ() {
   return (
-    <section className="py-28">
-
+    <section className="border-t border-slate-100 bg-white py-20 lg:py-28">
       <Container>
-
         <SectionHeader
-          badge="Supplier FAQ"
-          title="Frequently Asked Questions"
-          description="Everything you need to know before joining the GlobalAtlas Exim supplier network."
+          badge="SUPPLIER FAQ"
+          title="Questions, answered."
+          description="Everything you need to know before joining our supplier network."
         />
 
-        <div className="mx-auto mt-16 max-w-5xl">
-
-          <Accordion
-            className="space-y-5"
-          >
+        <div className="mx-auto mt-14 max-w-4xl">
+          <Accordion className="border-y border-slate-200">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={faq.question}
                 value={`faq-${index}`}
-                className="
-                  overflow-hidden
-                  rounded-[28px]
-                  border
-                  border-border
-                  bg-white
-                  px-8
-                  shadow-sm
-                  transition-all
-                  duration-300
-                  hover:border-primary/20
-                  hover:shadow-lg
-                "
+                className="group border-b border-slate-200 last:border-b-0"
               >
                 <AccordionTrigger
                   className="
-                    py-7
-                    text-left
-                    text-lg
-                    font-semibold
+                    flex w-full items-center gap-5 py-6 text-left
+                    hover:no-underline
                   "
                 >
-                  {faq.question}
+                  {/* Number */}
+
+                  <span
+                    className="
+                      shrink-0 text-xs font-bold tracking-[0.15em]
+                      text-[#2f7d5c]
+                    "
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  {/* Question */}
+
+                  <span
+                    className="
+                      flex-1 text-base font-semibold leading-6
+                      text-[#132838] transition-colors
+                      group-hover:text-[#2f7d5c]
+                      sm:text-lg
+                    "
+                  >
+                    {faq.question}
+                  </span>
                 </AccordionTrigger>
 
-                <AccordionContent
-                  className="
-                    pb-7
-                    text-base
-                    leading-8
-                    text-muted-foreground
-                  "
-                >
-                  {faq.answer}
-                </AccordionContent>
+                <AccordionContent>
+                  <div className="grid grid-cols-[48px_1fr] pb-7">
+                    <div />
 
+                    <p className="max-w-2xl text-sm leading-7 text-slate-500 sm:text-base">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
-
         </div>
 
-      </Container>
+        {/* Bottom note */}
 
+        <div className="mx-auto mt-10 max-w-4xl border-l-2 border-[#2f7d5c] pl-5">
+          <p className="text-sm leading-7 text-slate-500">
+            Still have questions? Our team is available to help you understand
+            the supplier verification and onboarding process.
+          </p>
+        </div>
+      </Container>
     </section>
   );
 }

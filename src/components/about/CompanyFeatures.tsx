@@ -8,87 +8,119 @@ import {
 const features = [
   {
     icon: BadgeCheck,
-    title: "Verified Manufacturers",
+    number: "01",
+    title: "Verified Suppliers",
     description:
-      "Every supplier is carefully evaluated before joining our network.",
+      "Carefully evaluating suppliers and sourcing opportunities.",
   },
   {
     icon: ShieldCheck,
-    title: "Quality Assurance",
+    number: "02",
+    title: "Quality Focus",
     description:
-      "Independent inspections help ensure product quality and consistency.",
+      "Supporting better product evaluation and quality confidence.",
   },
   {
     icon: Ship,
-    title: "End-to-End Logistics",
+    number: "03",
+    title: "Trade Support",
     description:
-      "From sourcing to shipping, we simplify international trade.",
+      "Helping businesses navigate sourcing and international trade.",
   },
   {
     icon: Globe2,
-    title: "Global Reach",
+    number: "04",
+    title: "Global Connections",
     description:
-      "Supporting buyers across international markets with confidence.",
+      "Connecting businesses with opportunities across international markets.",
   },
 ];
 
 export default function CompanyFeatures() {
   return (
     <div>
-
-      <span className="inline-flex rounded-full bg-primary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.15em] text-primary">
-        Who We Are
-      </span>
-
-      <h2 className="mt-6 font-heading text-5xl font-black leading-tight">
-
-        Your Trusted Export
-        <br />
-        & Global Sourcing Partner.
-
-      </h2>
-
-      <p className="mt-8 max-w-xl text-lg leading-8 text-muted-foreground">
-
-        GlobalAtlas Exim helps businesses around the world source
-        premium-quality products from trusted Indian manufacturers.
-        We combine supplier verification, quality assurance,
-        documentation, and logistics into one seamless export
-        experience.
-
+      {/* Intro */}
+      <p
+        className="
+          max-w-xl
+          text-base
+          leading-8
+          text-slate-500
+          lg:text-lg
+        "
+      >
+        GlobalAtlas Exim helps businesses identify suitable suppliers,
+        buyers, and international trade opportunities. We focus on
+        building reliable connections and making global business
+        relationships easier to explore.
       </p>
 
-      <div className="mt-10 grid gap-6">
-
+      {/* Features */}
+      <div className="mt-10 grid gap-x-8 gap-y-8 sm:grid-cols-2">
         {features.map((item) => {
           const Icon = item.icon;
 
           return (
             <div
               key={item.title}
-              className="flex gap-5"
+              className="
+                group
+                border-t
+                border-slate-200
+                pt-5
+              "
             >
-              <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                <Icon className="size-6" />
+              <div className="flex items-center justify-between">
+                <span
+                  className="
+                    text-[10px]
+                    font-bold
+                    tracking-[0.22em]
+                    text-[#2f7d5c]
+                  "
+                >
+                  {item.number}
+                </span>
+
+                <Icon
+                  className="
+                    size-5
+                    text-[#2f7d5c]
+                    transition-transform
+                    duration-300
+                    group-hover:scale-110
+                  "
+                  strokeWidth={1.8}
+                />
               </div>
 
-              <div>
+              <h3
+                className="
+                  mt-6
+                  font-heading
+                  text-xl
+                  font-bold
+                  tracking-[-0.025em]
+                  text-[#132838]
+                "
+              >
+                {item.title}
+              </h3>
 
-                <h3 className="font-bold text-lg">
-                  {item.title}
-                </h3>
-
-                <p className="mt-1 leading-7 text-muted-foreground">
-                  {item.description}
-                </p>
-
-              </div>
+              <p
+                className="
+                  mt-2
+                  text-sm
+                  leading-7
+                  text-slate-500
+                "
+              >
+                {item.description}
+              </p>
             </div>
           );
         })}
-
       </div>
-
     </div>
   );
 }

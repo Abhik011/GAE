@@ -1,103 +1,132 @@
 import Link from "next/link";
-
-import {
-  ArrowRight,
-  BadgeCheck,
-  Globe2,
-  Ship,
-  FileCheck2,
-} from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 import { Button } from "@/components/ui/buttons/button";
 
-const features = [
-  {
-    icon: BadgeCheck,
-    text: "Verified Manufacturers",
-  },
-  {
-    icon: Globe2,
-    text: "Worldwide Export",
-  },
-  {
-    icon: Ship,
-    text: "Global Logistics",
-  },
-  {
-    icon: FileCheck2,
-    text: "Export Documentation",
-  },
-];
-
 export default function HeroContent() {
   return (
-    <div>
+    <div className="relative">
+      {/* Section label */}
+      <div className="mb-8 flex items-center gap-4">
+        <span className="text-[11px] font-bold tracking-[0.28em] text-[#2f7d5c]">
+          01
+        </span>
 
-      <span className="inline-flex rounded-full bg-primary/10 px-5 py-2 text-sm font-semibold uppercase tracking-[0.15em] text-primary">
-        Export Products
-      </span>
+        <span className="h-px w-10 bg-[#2f7d5c]/40" />
 
-      <h1 className="mt-8 font-heading text-5xl font-black leading-tight lg:text-7xl">
-        Source Premium Products
-        <span className="block text-primary">
-          From India.
+        <span className="text-[11px] font-bold tracking-[0.28em] text-slate-400">
+          PRODUCTS · SOURCING
+        </span>
+      </div>
+
+      <h1
+        className="
+          max-w-4xl
+          font-heading
+          text-5xl
+          font-black
+          leading-[0.95]
+          tracking-[-0.055em]
+          text-[#132838]
+          sm:text-6xl
+          lg:text-7xl
+        "
+      >
+        <span className="text-[#2f7d5c]">
+          Discover products.
+        </span>
+
+        <br />
+
+        <span className="  text-transparent
+                    [-webkit-text-stroke:1.5px_#2f7d5c]">
+          Build connections.
         </span>
       </h1>
 
-      <p className="mt-8 max-w-xl text-lg leading-8 text-muted-foreground">
-        Discover high-quality products from trusted Indian manufacturers.
-        GlobalAtlas Exim simplifies sourcing with supplier verification,
-        export documentation, quality assurance, and worldwide logistics.
+      <p
+        className="
+          mt-8
+          max-w-xl
+          text-base
+          leading-8
+          text-slate-500
+          lg:text-lg
+        "
+      >
+        Explore product opportunities from India and connect with suitable
+        manufacturers for your sourcing and international trade requirements.
       </p>
 
-      <div className="mt-10 grid gap-5 sm:grid-cols-2">
-
-        {features.map((item) => {
-          const Icon = item.icon;
-
-          return (
-            <div
-              key={item.text}
-              className="flex items-center gap-3"
-            >
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                <Icon className="size-5" />
-              </div>
-
-              <span className="font-medium">
-                {item.text}
-              </span>
-            </div>
-          );
-        })}
-
+      {/* Minimal capabilities */}
+      <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
+        {[
+          "Supplier Discovery",
+          "Product Sourcing",
+          "Trade Support",
+        ].map((item) => (
+          <span
+            key={item}
+            className="
+              text-[11px]
+              font-bold
+              uppercase
+              tracking-[0.16em]
+              text-[#2f7d5c]
+            "
+          >
+            {item}
+          </span>
+        ))}
       </div>
 
-      <div className="mt-12 flex flex-wrap gap-4">
-
+      {/* Actions */}
+      <div className="mt-10 flex flex-wrap items-center gap-5">
         <Link href="/products/categories">
           <Button
             size="lg"
-            className="h-14 rounded-2xl px-8"
+            className="
+              group
+              h-13
+              rounded-xl
+              bg-[#132838]
+              px-6
+              text-sm
+              font-bold
+              shadow-none
+              transition-all
+              duration-300
+              hover:bg-[#2f7d5c]
+            "
           >
-            Browse Categories
+            Browse Products
 
-            <ArrowRight className="ml-2 size-5" />
+            <ArrowUpRight
+              className="
+                ml-3
+                size-4
+                transition-transform
+                duration-300
+                group-hover:translate-x-0.5
+                group-hover:-translate-y-0.5
+              "
+            />
           </Button>
         </Link>
 
-        <Link href="/request-quote">
-          <Button
-            variant="outline"
-            size="lg"
-            className="h-14 rounded-2xl px-8"
-          >
-            Request Quote
-          </Button>
+        <Link
+          href="/request-quote"
+          className="
+            text-sm
+            font-bold
+            text-[#132838]
+            transition-colors
+            hover:text-[#2f7d5c]
+          "
+        >
+          Request a Quote →
         </Link>
-
       </div>
-
     </div>
   );
 }

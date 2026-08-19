@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import {
-  ArrowRight,
+  ArrowUpRight,
   Package,
 } from "lucide-react";
 
@@ -22,26 +22,19 @@ export default function ProductCard({
   description,
 }: ProductCardProps) {
   return (
-    <div
-      className="
-        group
-        overflow-hidden
-        rounded-[32px]
-        border
-        border-border
-        bg-white
-        shadow-sm
-        transition-all
-        duration-500
-        hover:-translate-y-2
-        hover:border-primary/20
-        hover:shadow-2xl
-      "
-    >
+    <article className="group">
       {/* Image */}
 
-      <div className="relative h-64 overflow-hidden">
-
+      <Link
+        href={`/products/${slug}`}
+        className="
+          relative
+          block
+          aspect-[4/3]
+          overflow-hidden
+          bg-slate-200
+        "
+      >
         <Image
           src={image}
           alt={title}
@@ -50,103 +43,153 @@ export default function ProductCard({
             object-cover
             transition-transform
             duration-700
-            group-hover:scale-105
+            ease-out
+            group-hover:scale-[1.03]
           "
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+        {/* Subtle image overlay */}
+
+        <div
+          className="
+            absolute
+            inset-0
+            bg-[#132838]/0
+            transition-colors
+            duration-500
+            group-hover:bg-[#132838]/10
+          "
+        />
+
+        {/* Category */}
 
         <span
           className="
             absolute
             left-5
             top-5
-            rounded-full
-            bg-white/90
-            px-4
-            py-2
-            text-xs
-            font-semibold
+            bg-white
+            px-3
+            py-1.5
+            text-[10px]
+            font-bold
             uppercase
             tracking-[0.18em]
-            text-primary
-            backdrop-blur
+            text-[#132838]
           "
         >
           {category}
         </span>
-
-      </div>
+      </Link>
 
       {/* Content */}
 
-      <div className="p-8">
+      <div className="border-b border-slate-200 pb-7 pt-6">
+        {/* Meta */}
 
-        <div className="flex items-center gap-3 text-primary">
+        <div
+          className="
+            flex
+            items-center
+            gap-2
+            text-[10px]
+            font-bold
+            uppercase
+            tracking-[0.18em]
+            text-[#2f7d5c]
+          "
+        >
+          <Package
+            className="size-3.5"
+            strokeWidth={1.7}
+          />
 
-          <Package className="size-5" />
-
-          <span className="text-sm font-semibold uppercase tracking-[0.15em]">
-            Export Ready
-          </span>
-
+          Export Sourcing
         </div>
 
-        <h3 className="mt-5 text-2xl font-bold">
-          {title}
-        </h3>
+        {/* Title */}
 
-        <p className="mt-5 leading-8 text-muted-foreground">
+        <Link href={`/products/${slug}`}>
+          <h3
+            className="
+              mt-4
+              font-heading
+              text-2xl
+              font-bold
+              tracking-[-0.03em]
+              text-[#132838]
+              transition-colors
+              duration-300
+              group-hover:text-[#2f7d5c]
+            "
+          >
+            {title}
+          </h3>
+        </Link>
+
+        {/* Description */}
+
+        <p
+          className="
+            mt-3
+            min-h-[72px]
+            text-sm
+            leading-6
+            text-slate-500
+          "
+        >
           {description}
         </p>
 
-        <div className="mt-8 flex gap-3">
+        {/* Bottom */}
 
+        <div className="mt-6 flex items-center justify-between">
           <Link
             href={`/products/${slug}`}
             className="
               inline-flex
-              flex-1
               items-center
-              justify-center
-              rounded-xl
-              bg-primary
-              px-5
-              py-3
-              font-semibold
-              text-white
-              transition
-              hover:opacity-90
+              gap-2
+              text-[11px]
+              font-bold
+              uppercase
+              tracking-[0.16em]
+              text-[#132838]
+              transition-colors
+              duration-300
+              hover:text-[#2f7d5c]
             "
           >
-            View Details
+            View Product
 
-            <ArrowRight className="ml-2 size-4" />
+            <ArrowUpRight
+              className="
+                size-4
+                transition-transform
+                duration-300
+                group-hover:-translate-y-0.5
+                group-hover:translate-x-0.5
+              "
+            />
           </Link>
 
           <Link
             href="/request-quote"
             className="
-              inline-flex
-              items-center
-              justify-center
-              rounded-xl
-              border
-              border-border
-              px-5
-              py-3
-              font-semibold
-              transition
-              hover:border-primary
-              hover:text-primary
+              text-[10px]
+              font-bold
+              uppercase
+              tracking-[0.16em]
+              text-slate-400
+              transition-colors
+              duration-300
+              hover:text-[#2f7d5c]
             "
           >
-            Quote
+            Request Quote
           </Link>
-
         </div>
-
       </div>
-    </div>
+    </article>
   );
 }

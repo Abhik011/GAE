@@ -7,9 +7,10 @@ import {
   Car,
   Hotel,
   UtensilsCrossed,
+  Shirt,
 } from "lucide-react";
 
-export const industry = [
+export const industries = [
   {
     slug: "agriculture",
     title: "Agriculture",
@@ -17,38 +18,10 @@ export const industry = [
       "Premium agricultural export solutions from India.",
     image: "/images/industries/agriculture.jpg",
     icon: Wheat,
-    products: [
-      {
-        name: "Basmati Rice",
-        image: "/images/products/basmati-rice.jpg",
-        description: "Premium export-quality rice.",
-      },
-      {
-        name: "Wheat",
-        image: "/images/products/wheat.jpg",
-        description: "High-quality wheat.",
-      },
-      {
-        name: "Spices",
-        image: "/images/products/spices.jpg",
-        description: "Authentic Indian spices.",
-      },
-    ],
-    capabilities: [
-      {
-        title: "Verified Manufacturers",
-        description:
-          "Work with trusted agricultural producers.",
-      },
-      {
-        title: "Export Documentation",
-        description:
-          "Complete export paperwork and compliance.",
-      },
-    ],
+    products: [],
+    capabilities: [],
     faq: [],
   },
-
   {
     slug: "manufacturing",
     title: "Manufacturing",
@@ -60,7 +33,6 @@ export const industry = [
     capabilities: [],
     faq: [],
   },
-
   {
     slug: "construction",
     title: "Construction",
@@ -72,7 +44,6 @@ export const industry = [
     capabilities: [],
     faq: [],
   },
-
   {
     slug: "retail",
     title: "Retail",
@@ -84,7 +55,6 @@ export const industry = [
     capabilities: [],
     faq: [],
   },
-
   {
     slug: "healthcare",
     title: "Healthcare",
@@ -96,7 +66,6 @@ export const industry = [
     capabilities: [],
     faq: [],
   },
-
   {
     slug: "automotive",
     title: "Automotive",
@@ -108,7 +77,6 @@ export const industry = [
     capabilities: [],
     faq: [],
   },
-
   {
     slug: "hospitality",
     title: "Hospitality",
@@ -120,7 +88,6 @@ export const industry = [
     capabilities: [],
     faq: [],
   },
-
   {
     slug: "food-processing",
     title: "Food Processing",
@@ -128,6 +95,17 @@ export const industry = [
       "Processed foods and beverage exports.",
     image: "/images/industries/food-processing.jpg",
     icon: UtensilsCrossed,
+    products: [],
+    capabilities: [],
+    faq: [],
+  },
+  {
+    slug: "textiles",
+    title: "Textiles & Apparel",
+    description:
+      "Textile, apparel and fabric sourcing from Indian manufacturers.",
+    image: "/images/industries/textiles.jpg",
+    icon: Shirt,
     products: [],
     capabilities: [],
     faq: [],

@@ -1,42 +1,32 @@
 export const productFaqs = [
   {
-    question: "What products can GlobalAtlas Exim source?",
+    question: "What products can GlobalAtlas Exim help source?",
     answer:
-      "GlobalAtlas Exim sources products across agriculture, food, textiles, engineering, furniture, chemicals, packaging, construction materials, and many other industries through verified Indian manufacturers.",
+      "GlobalAtlas Exim helps businesses explore sourcing opportunities across agriculture, food products, textiles, engineering goods, furniture, packaging, construction materials, and other product categories through suitable Indian suppliers.",
   },
   {
-    question: "Do you manufacture products yourself?",
+    question: "Does GlobalAtlas Exim manufacture products directly?",
     answer:
-      "No. GlobalAtlas Exim works with a network of carefully selected manufacturers and suppliers. We help buyers identify suitable suppliers, manage sourcing, quality assurance, and export coordination.",
+      "No. GlobalAtlas Exim is a sourcing and export facilitation company. We help buyers identify suitable manufacturers and suppliers based on their product requirements and support key stages of the trade process.",
   },
   {
-    question: "Can I request OEM or private label products?",
+    question: "Can I request OEM, ODM, or private label products?",
     answer:
-      "Yes. Many of our manufacturing partners provide OEM, ODM, and private label solutions according to your specifications.",
+      "Yes. Depending on the product category and supplier capabilities, we can help explore OEM, ODM, and private label manufacturing options based on your specifications.",
   },
   {
-    question: "Do you verify suppliers before sourcing?",
+    question: "How do you evaluate suppliers for sourcing?",
     answer:
-      "Yes. Supplier verification is an important part of our sourcing process. We evaluate manufacturers based on capability, product quality, documentation, and export readiness.",
+      "Supplier evaluation may include reviewing manufacturing capabilities, product suitability, documentation, quality requirements, and export readiness based on the requirements of each sourcing inquiry.",
   },
   {
-    question: "Can you arrange quality inspections?",
+    question: "Can you help with export documentation and shipping?",
     answer:
-      "Yes. Quality inspections can be coordinated before shipment to help ensure products meet agreed specifications and quality standards.",
+      "Yes. We can assist with export documentation, logistics coordination, and other stages required to support the international movement of goods, depending on the product and destination.",
   },
   {
-    question: "Which countries do you export to?",
+    question: "How can I request a product quotation?",
     answer:
-      "We work with buyers across multiple international markets and support exports wherever regulations and logistics allow.",
-  },
-  {
-    question: "Can you manage shipping and export documentation?",
-    answer:
-      "Yes. We assist with export documentation, customs coordination, logistics planning, and international shipping support.",
-  },
-  {
-    question: "How can I request a quotation?",
-    answer:
-      "Simply submit your product requirements through our Request Quote form. Our sourcing team will review your inquiry and respond with suitable options.",
+      "Submit your product requirements through our Request Quote form, including product specifications, quantity, destination, and any other relevant requirements. Our team will review the inquiry and help explore suitable options.",
   },
 ];

@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { ArrowRight, type LucideIcon } from "lucide-react";
+import { ArrowUpRight, type LucideIcon } from "lucide-react";
 
 interface CategoryCardProps {
   title: string;
   description: string;
   href: string;
   icon: LucideIcon;
+  index: number;
 }
 
 export default function CategoryCard({
@@ -13,118 +14,107 @@ export default function CategoryCard({
   description,
   href,
   icon: Icon,
+  index,
 }: CategoryCardProps) {
+  const number = String(index).padStart(2, "0");
+
   return (
     <Link
       href={href}
       className="
         group
         relative
-        overflow-hidden
-        rounded-[32px]
-        border
-        border-border
-        bg-white
-        p-8
-        shadow-sm
-        transition-all
-        duration-500
-        hover:-translate-y-2
-        hover:border-primary/20
-        hover:shadow-2xl
+        min-h-[260px]
+        border-b
+        border-r
+        border-slate-200
+        p-7
+        transition-colors
+        duration-300
+        hover:bg-[#f7faf8]
+        lg:p-8
       "
     >
-      {/* Hover Background */}
+      {/* Number */}
+
+      <span
+        className="
+          text-[10px]
+          font-bold
+          tracking-[0.18em]
+          text-slate-400
+          transition-colors
+          duration-300
+          group-hover:text-[#2f7d5c]
+        "
+      >
+        {number}
+      </span>
+
+      {/* Icon */}
 
       <div
         className="
-          absolute
-          inset-0
-          bg-gradient-to-br
-          from-primary/5
-          via-primary/[0.03]
-          to-transparent
-          opacity-0
-          transition-opacity
-          duration-500
-          group-hover:opacity-100
+          mt-8
+          text-slate-400
+          transition-all
+          duration-300
+          group-hover:text-[#2f7d5c]
+          group-hover:-translate-y-1
         "
-      />
+      >
+        <Icon
+          className="size-6"
+          strokeWidth={1.5}
+        />
+      </div>
 
-      <div className="relative z-10">
+      {/* Content */}
 
-        {/* Icon */}
-
-        <div
+      <div className="mt-6">
+        <h3
           className="
-            flex
-            h-18
-            w-18
-            items-center
-            justify-center
-            rounded-3xl
-            bg-primary/10
-            text-primary
-            transition-all
-            duration-500
-            group-hover:scale-110
-            group-hover:bg-primary
-            group-hover:text-white
+            font-heading
+            text-xl
+            font-bold
+            tracking-[-0.03em]
+            text-[#132838]
+            transition-colors
+            duration-300
+            group-hover:text-[#2f7d5c]
           "
         >
-          <Icon className="size-9" />
-        </div>
-
-        {/* Title */}
-
-        <h3 className="mt-8 text-2xl font-bold text-slate-900">
           {title}
         </h3>
 
-        {/* Description */}
-
-        <p className="mt-4 leading-8 text-muted-foreground">
+        <p
+          className="
+            mt-3
+            max-w-xs
+            text-sm
+            leading-6
+            text-slate-500
+          "
+        >
           {description}
         </p>
+      </div>
 
-        {/* Footer */}
+      {/* Bottom arrow */}
 
-        <div className="mt-10 flex items-center justify-between">
-
-          <span
-            className="
-              text-sm
-              font-semibold
-              uppercase
-              tracking-[0.18em]
-              text-primary
-            "
-          >
-            Explore Category
-          </span>
-
-          <div
-            className="
-              flex
-              h-12
-              w-12
-              items-center
-              justify-center
-              rounded-full
-              border
-              border-border
-              transition-all
-              duration-300
-              group-hover:bg-primary
-              group-hover:text-white
-              group-hover:border-primary
-            "
-          >
-            <ArrowRight className="size-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </div>
-
-        </div>
-
+      <div className="absolute bottom-7 right-7 lg:bottom-8 lg:right-8">
+        <ArrowUpRight
+          className="
+            size-5
+            text-slate-300
+            transition-all
+            duration-300
+            group-hover:-translate-y-1
+            group-hover:translate-x-1
+            group-hover:text-[#2f7d5c]
+          "
+          strokeWidth={1.7}
+        />
       </div>
     </Link>
   );

@@ -13,56 +13,59 @@ import SectionHeader from "@/components/sections/SectionHeader";
 const features = [
   {
     icon: Factory,
-    title: "Verified Manufacturers",
+    number: "01",
+    title: "Supplier Sourcing",
     description:
-      "Work with carefully vetted Indian manufacturers that meet international quality and export standards.",
+      "Identify suitable Indian manufacturers based on your requirements.",
   },
   {
     icon: ShieldCheck,
-    title: "Quality Assurance",
+    number: "02",
+    title: "Supplier Verification",
     description:
-      "Supplier verification, factory audits, and product inspections help ensure consistent product quality.",
-  },
-  {
-    icon: Globe2,
-    title: "Global Export Expertise",
-    description:
-      "Our team handles export documentation, customs compliance, and international shipping coordination.",
-  },
-  {
-    icon: Users,
-    title: "Dedicated Sourcing Team",
-    description:
-      "A dedicated sourcing specialist supports you from the initial inquiry through successful delivery.",
-  },
-  {
-    icon: Truck,
-    title: "End-to-End Logistics",
-    description:
-      "From factory pickup to final destination, we coordinate the complete logistics process.",
+      "Review supplier capabilities, documentation and export readiness.",
   },
   {
     icon: BadgeCheck,
-    title: "Competitive Pricing",
+    number: "03",
+    title: "Quality Support",
     description:
-      "Compare quotations from suitable manufacturers to find the right balance of quality, price, and lead time.",
+      "Coordinate product requirements and quality checks before shipment.",
+  },
+  {
+    icon: Globe2,
+    number: "04",
+    title: "Export Coordination",
+    description:
+      "Support documentation and coordination for international trade.",
+  },
+  {
+    icon: Truck,
+    number: "05",
+    title: "Logistics Support",
+    description:
+      "Coordinate freight and shipment requirements from India.",
+  },
+  {
+    icon: Users,
+    number: "06",
+    title: "Single Point of Contact",
+    description:
+      "Stay connected throughout the sourcing and export process.",
   },
 ];
 
 export default function WhyRequestQuote() {
   return (
-    <section className="bg-slate-50 py-28">
-
+    <section className="bg-slate-50 py-20 lg:py-24">
       <Container>
-
         <SectionHeader
           badge="Why GlobalAtlas Exim"
-          title="Why Request Your Quote Through GlobalAtlas Exim?"
-          description="We simplify international sourcing by connecting buyers with verified manufacturers while managing quality, compliance, logistics, and communication."
+          title="More Than Just a Quote."
+          description="Get support at key stages of your sourcing journey, from finding suitable manufacturers to export coordination."
         />
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-2 xl:grid-cols-3">
-
+        <div className="mt-12 grid overflow-hidden border border-slate-200 bg-slate-200 md:grid-cols-2 xl:grid-cols-3">
           {features.map((feature) => {
             const Icon = feature.icon;
 
@@ -71,78 +74,80 @@ export default function WhyRequestQuote() {
                 key={feature.title}
                 className="
                   group
-                  rounded-[32px]
-                  border
-                  border-border
+                  relative
+                  min-h-[240px]
                   bg-white
-                  p-8
-                  shadow-sm
-                  transition-all
+                  p-7
+                  transition-colors
                   duration-300
-                  hover:-translate-y-2
-                  hover:border-primary/20
-                  hover:shadow-xl
+                  hover:bg-[#2f7d5c]/[0.03]
+                  sm:p-8
                 "
               >
-                <div
-                  className="
-                    flex
-                    h-16
-                    w-16
-                    items-center
-                    justify-center
-                    rounded-2xl
-                    bg-primary/10
-                    text-primary
-                    transition-all
-                    duration-300
-                    group-hover:bg-primary
-                    group-hover:text-white
-                  "
-                >
-                  <Icon className="size-8" />
+                <div className="flex items-start justify-between">
+                  <div
+                    className="
+                      flex
+                      size-11
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-slate-50
+                      text-slate-500
+                      transition-all
+                      duration-300
+                      group-hover:bg-[#2f7d5c]/10
+                      group-hover:text-[#2f7d5c]
+                    "
+                  >
+                    <Icon
+                      className="size-5"
+                      strokeWidth={1.5}
+                    />
+                  </div>
+
+                  <span className="text-[10px] font-bold tracking-[0.2em] text-slate-300 group-hover:text-[#2f7d5c]">
+                    {feature.number}
+                  </span>
                 </div>
 
-                <h3 className="mt-8 text-2xl font-bold">
-                  {feature.title}
-                </h3>
+                <div className="mt-10">
+                  <h3 className="font-heading text-xl font-bold tracking-[-0.02em] text-[#132838]">
+                    {feature.title}
+                  </h3>
 
-                <p className="mt-5 leading-8 text-muted-foreground">
-                  {feature.description}
-                </p>
+                  <p className="mt-3 max-w-md text-sm leading-7 text-slate-500">
+                    {feature.description}
+                  </p>
+                </div>
 
+                <span
+                  className="
+                    absolute
+                    bottom-0
+                    left-0
+                    h-px
+                    w-0
+                    bg-[#2f7d5c]
+                    transition-all
+                    duration-500
+                    group-hover:w-full
+                  "
+                />
               </div>
             );
           })}
-
         </div>
 
-        {/* Bottom Banner */}
+        {/* Bottom message */}
 
-        <div
-          className="
-            mt-24
-            rounded-[36px]
-            bg-primary
-            p-12
-            text-center
-            text-white
-          "
-        >
-          <h2 className="text-4xl font-black lg:text-5xl">
-            From Inquiry to International Delivery
-          </h2>
-
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/80">
-            Our sourcing specialists help you identify the right suppliers,
-            negotiate competitive pricing, oversee quality inspections, and
-            coordinate export logistics—so you can focus on growing your business.
+        <div className="mt-12 border-t border-slate-200 pt-8 text-center">
+          <p className="mx-auto max-w-2xl text-base leading-7 text-slate-500">
+            One coordinated starting point for exploring suitable suppliers,
+            sourcing options and export requirements from India.
           </p>
-
         </div>
-
       </Container>
-
     </section>
   );
 }

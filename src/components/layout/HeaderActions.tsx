@@ -4,12 +4,9 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/buttons/button";
 
-import MobileNav from "./MobileNav";
-
 export default function HeaderActions() {
   return (
     <div className="flex shrink-0 items-center gap-3">
-
       <Link href="/become-supplier" className="hidden lg:block">
         <Button
           variant="outline"
@@ -53,9 +50,6 @@ export default function HeaderActions() {
           Request Quote
         </Button>
       </Link>
-
-      <MobileNav />
-
     </div>
   );
 }

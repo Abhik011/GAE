@@ -12,144 +12,173 @@ import SectionHeader from "@/components/sections/SectionHeader";
 
 const features = [
   {
+    number: "01",
     icon: SearchCheck,
-    title: "Verified Supplier Network",
+    title: "Supplier Network",
     description:
-      "Every manufacturer is evaluated for production capability, quality standards, certifications, and export readiness before being recommended.",
+      "Connect with suitable Indian manufacturers based on your sourcing requirements.",
   },
   {
+    number: "02",
     icon: ShieldCheck,
-    title: "Quality First",
+    title: "Quality Support",
     description:
-      "Inspection and quality assurance processes help ensure products meet agreed specifications before shipment.",
+      "Support for product specifications, quality requirements and inspections before shipment.",
   },
   {
+    number: "03",
     icon: Globe2,
-    title: "Global Export Expertise",
+    title: "Export Coordination",
     description:
-      "We assist with export documentation, customs compliance, logistics planning, and international shipping.",
+      "Guidance across export documentation, logistics and international trade requirements.",
   },
   {
+    number: "04",
     icon: Handshake,
-    title: "Transparent Communication",
+    title: "Clear Communication",
     description:
-      "Receive regular project updates, supplier coordination, and complete visibility throughout the sourcing process.",
+      "Stay informed with direct coordination and updates throughout the sourcing process.",
   },
   {
+    number: "05",
     icon: Truck,
-    title: "End-to-End Logistics",
+    title: "Logistics Support",
     description:
-      "From factory pickup to international delivery, we coordinate the complete supply chain.",
+      "Help coordinate the movement of goods from suppliers to international destinations.",
   },
   {
+    number: "06",
     icon: BadgeCheck,
     title: "Dedicated Support",
     description:
-      "Work directly with a sourcing specialist who understands your business requirements from inquiry to delivery.",
+      "A single point of contact to support your sourcing requirements from inquiry to delivery.",
   },
 ];
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-slate-50 py-28">
-
+    <section className="bg-slate-50 py-20 lg:py-24">
       <Container>
-
         <SectionHeader
           badge="Why GlobalAtlas Exim"
-          title="A Trusted Partner for Global Sourcing"
-          description="We simplify international procurement by combining verified supplier networks, export expertise, quality assurance, and transparent communication."
+          title="Built for better trade connections."
+          description="We help simplify international sourcing through supplier coordination, quality support, export guidance and transparent communication."
         />
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-2">
-
+        <div
+          className="
+            mt-12
+            grid
+            overflow-hidden
+            border
+            border-slate-200
+            bg-slate-200
+            md:grid-cols-2
+            xl:grid-cols-3
+          "
+        >
           {features.map((feature) => {
             const Icon = feature.icon;
 
             return (
               <div
-                key={feature.title}
+                key={feature.number}
                 className="
                   group
-                  flex
-                  gap-6
-                  rounded-[30px]
-                  border
-                  border-border
+                  relative
+                  min-h-[240px]
                   bg-white
-                  p-8
-                  shadow-sm
-                  transition-all
+                  p-7
+                  transition-colors
                   duration-300
-                  hover:-translate-y-1
-                  hover:border-primary/20
-                  hover:shadow-xl
+                  hover:bg-slate-50
+                  sm:p-8
                 "
               >
-                <div
-                  className="
-                    flex
-                    h-16
-                    w-16
-                    shrink-0
-                    items-center
-                    justify-center
-                    rounded-2xl
-                    bg-primary/10
-                    text-primary
-                    transition-all
-                    duration-300
-                    group-hover:bg-primary
-                    group-hover:text-white
-                  "
-                >
-                  <Icon className="size-8" />
+                <div className="flex items-start justify-between gap-6">
+                  <div
+                    className="
+                      flex
+                      size-11
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-slate-50
+                      text-slate-500
+                      transition-colors
+                      duration-300
+                      group-hover:bg-[#2f7d5c]/10
+                      group-hover:text-[#2f7d5c]
+                    "
+                  >
+                    <Icon
+                      className="size-5"
+                      strokeWidth={1.5}
+                    />
+                  </div>
+
+                  <span
+                    className="
+                      text-[10px]
+                      font-bold
+                      tracking-[0.2em]
+                      text-slate-300
+                      transition-colors
+                      duration-300
+                      group-hover:text-[#2f7d5c]
+                    "
+                  >
+                    {feature.number}
+                  </span>
                 </div>
 
-                <div>
-
-                  <h3 className="text-2xl font-bold">
+                <div className="mt-9">
+                  <h3
+                    className="
+                      font-heading
+                      text-xl
+                      font-bold
+                      tracking-[-0.02em]
+                      text-[#132838]
+                    "
+                  >
                     {feature.title}
                   </h3>
 
-                  <p className="mt-4 leading-8 text-muted-foreground">
+                  <p className="mt-3 max-w-md text-sm leading-7 text-slate-500">
                     {feature.description}
                   </p>
-
                 </div>
 
+                <span
+                  className="
+                    absolute
+                    bottom-0
+                    left-0
+                    h-px
+                    w-0
+                    bg-[#2f7d5c]
+                    transition-all
+                    duration-500
+                    group-hover:w-full
+                  "
+                />
               </div>
             );
           })}
-
         </div>
 
-        {/* Trust Banner */}
-
-        <div
-          className="
-            mt-24
-            rounded-[36px]
-            bg-primary
-            p-12
-            text-center
-            text-white
-          "
-        >
-          <h2 className="text-4xl font-black lg:text-5xl">
-            One Partner. Every Step of Your Export Journey.
-          </h2>
-
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/80">
-            Whether you're sourcing a single product or building a long-term
-            procurement strategy, GlobalAtlas Exim provides the expertise,
-            supplier network, and operational support to simplify global trade.
+        <div className="mt-10 flex flex-col gap-3 border-t border-slate-200 pt-8 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm leading-6 text-slate-500">
+            From the first requirement to export coordination, we help keep
+            your sourcing process organised.
           </p>
 
+          <span className="shrink-0 text-sm font-semibold text-[#2f7d5c]">
+            One partner. Connected trade support.
+          </span>
         </div>
-
       </Container>
-
     </section>
   );
 }

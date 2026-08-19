@@ -1,12 +1,11 @@
 import {
   BadgeCheck,
-  Globe2,
   Factory,
+  Globe2,
   TrendingUp,
 } from "lucide-react";
 
 import Container from "@/components/ui/container/Container";
-import SectionHeader from "@/components/sections/SectionHeader";
 
 interface IndustryOverviewProps {
   industry: {
@@ -17,28 +16,32 @@ interface IndustryOverviewProps {
 
 const highlights = [
   {
+    number: "01",
     icon: Factory,
-    title: "Trusted Manufacturers",
+    title: "Verified Manufacturers",
     description:
-      "Work with carefully selected Indian manufacturers known for consistent quality and production capability.",
+      "Connect with suitable Indian manufacturers with reliable production capabilities.",
   },
   {
+    number: "02",
     icon: Globe2,
-    title: "Global Export Experience",
+    title: "Export Ready",
     description:
-      "Products prepared according to international quality standards and export requirements.",
+      "Support for international requirements, documentation, and market-specific needs.",
   },
   {
+    number: "03",
     icon: BadgeCheck,
-    title: "Quality Assurance",
+    title: "Quality Support",
     description:
-      "Every shipment follows supplier verification, inspections and documentation checks.",
+      "Supplier verification and quality checks help support your sourcing requirements.",
   },
   {
+    number: "04",
     icon: TrendingUp,
-    title: "Competitive Pricing",
+    title: "Competitive Sourcing",
     description:
-      "Optimize sourcing costs while maintaining high product quality and reliable delivery.",
+      "Explore suitable sourcing options based on product requirements, quantity, and market needs.",
   },
 ];
 
@@ -46,18 +49,46 @@ export default function IndustryOverview({
   industry,
 }: IndustryOverviewProps) {
   return (
-    <section className="py-28">
-
+    <section className="border-t border-slate-200 bg-slate-50/50 py-20 lg:py-24">
       <Container>
+        {/* Header */}
 
-        <SectionHeader
-          badge="Overview"
-          title={`Why Source ${industry.title} Products from India?`}
-          description={industry.description}
-        />
+        <div className="max-w-3xl">
+          <div className="flex items-center gap-4">
+            <span className="text-[11px] font-bold tracking-[0.28em] text-[#2f7d5c]">
+              OVERVIEW
+            </span>
 
-        <div className="mt-20 grid gap-8 lg:grid-cols-2">
+            <span className="h-px w-10 bg-[#2f7d5c]/30" />
+          </div>
 
+          <h2
+            className="
+              mt-5
+              font-heading
+              text-3xl
+              font-black
+              leading-[1.1]
+              tracking-[-0.035em]
+              text-[#132838]
+              sm:text-4xl
+              lg:text-5xl
+            "
+          >
+            Source {industry.title} Products
+            <span className="block text-[#2f7d5c]">
+              from India.
+            </span>
+          </h2>
+
+          <p className="mt-5 max-w-2xl text-base leading-7 text-slate-500 lg:text-lg">
+            {industry.description}
+          </p>
+        </div>
+
+        {/* Highlights */}
+
+        <div className="mt-14 grid overflow-hidden border border-slate-200 bg-slate-200 md:grid-cols-2">
           {highlights.map((item) => {
             const Icon = item.icon;
 
@@ -65,36 +96,40 @@ export default function IndustryOverview({
               <div
                 key={item.title}
                 className="
-                  rounded-[32px]
-                  border
-                  border-border
+                  group
+                  relative
                   bg-white
-                  p-8
-                  transition-all
+                  p-7
+                  transition-colors
                   duration-300
-                  hover:-translate-y-2
-                  hover:border-primary/20
-                  hover:shadow-xl
+                  hover:bg-slate-50
+                  sm:p-8
                 "
               >
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                  <Icon className="size-8" />
+                <div className="flex items-start justify-between gap-6">
+                  <div className="flex size-11 items-center justify-center rounded-full bg-slate-50 text-slate-500 transition-colors duration-300 group-hover:bg-[#2f7d5c]/10 group-hover:text-[#2f7d5c]">
+                    <Icon
+                      className="size-5"
+                      strokeWidth={1.5}
+                    />
+                  </div>
+
+                  <span className="text-[10px] font-bold tracking-[0.2em] text-slate-300">
+                    {item.number}
+                  </span>
                 </div>
 
-                <h3 className="mt-8 text-2xl font-bold">
+                <h3 className="mt-10 font-heading text-xl font-bold tracking-[-0.02em] text-[#132838]">
                   {item.title}
                 </h3>
 
-                <p className="mt-5 leading-8 text-muted-foreground">
+                <p className="mt-3 max-w-md text-sm leading-7 text-slate-500">
                   {item.description}
                 </p>
-
               </div>
             );
           })}
-
         </div>
-
       </Container>
     </section>
   );

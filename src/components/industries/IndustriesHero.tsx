@@ -36,110 +36,205 @@ const stats = [
 
 export default function IndustriesHero() {
   return (
-    <section className="relative overflow-hidden bg-slate-50 pt-40 pb-28">
-
-      {/* Background */}
-
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,.08),transparent_35%)]" />
-
-      <div className="absolute -left-40 top-20 h-[420px] w-[420px] rounded-full bg-primary/10 blur-[120px]" />
-
-      <div className="absolute -right-40 bottom-0 h-[420px] w-[420px] rounded-full bg-sky-500/10 blur-[120px]" />
+    <section className="relative overflow-hidden bg-[#f7f8f7]">
+      {/* Subtle Grid */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          opacity-50
+          [background-image:linear-gradient(rgba(19,40,56,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(19,40,56,0.04)_1px,transparent_1px)]
+          [background-size:72px_72px]
+        "
+      />
 
       <Container>
+        <div
+          className="
+            relative
+            flex
+            min-h-screen
+            flex-col
+            justify-center
+            py-28
+            pt-36
+            lg:py-20
+            lg:pt-32
+          "
+        >
+          {/* Hero Content */}
+          <div className="mx-auto max-w-4xl text-center">
+            {/* Label */}
+            <div className="flex items-center justify-center gap-4">
+              <span className="text-[11px] font-bold tracking-[0.28em] text-[#2f7d5c]">
+                01
+              </span>
 
-        <div className="mx-auto max-w-5xl text-center">
+              <span className="h-px w-10 bg-[#2f7d5c]/30" />
 
-          <span className="inline-flex rounded-full bg-primary/10 px-5 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-            Industries We Serve
-          </span>
+              <span className="text-[11px] font-bold tracking-[0.28em] text-slate-400">
+                INDUSTRIES WE SERVE
+              </span>
+            </div>
 
-          <h1 className="mt-8 font-heading text-5xl font-black leading-tight lg:text-7xl">
-            Export Solutions
-            <span className="block text-primary">
-              Across Multiple Industries
-            </span>
-          </h1>
-
-          <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-muted-foreground">
-            GlobalAtlas Exim connects international buyers with trusted Indian
-            manufacturers across agriculture, engineering, food processing,
-            healthcare, construction, retail, hospitality, and many more
-            industries.
-          </p>
-
-          <div className="mt-12 flex flex-wrap justify-center gap-5">
-
-            <Link href="/products">
-              <Button
-                size="lg"
-                className="h-14 rounded-2xl px-8"
-              >
-                Explore Products
-
-                <ArrowRight className="ml-2 size-5" />
-              </Button>
-            </Link>
-
-            <Link href="/request-quote">
-              <Button
-                variant="outline"
-                size="lg"
-                className="h-14 rounded-2xl px-8"
-              >
-                Request Quote
-              </Button>
-            </Link>
-
-          </div>
-
-        </div>
-
-        {/* Stats */}
-
-        <div className="mt-24 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-
-          {stats.map((item) => {
-            const Icon = item.icon;
-
-            return (
-              <div
-                key={item.label}
+            {/* Heading */}
+            <h1
+              className="
+                mt-7
+                font-heading
+                text-4xl
+                font-black
+                leading-[1.02]
+                tracking-[-0.045em]
+                text-[#132838]
+                sm:text-5xl
+                md:text-6xl
+                lg:text-7xl
+              "
+            >
+              Built for industry.
+              <span
                 className="
-                  rounded-[30px]
-                  border
-                  border-border
-                  bg-white/70
-                  p-8
-                  text-center
-                  shadow-sm
-                  backdrop-blur-xl
-                  transition-all
-                  duration-300
-                  hover:-translate-y-2
-                  hover:shadow-xl
+                  block
+                  text-transparent
+                  [-webkit-text-stroke:1.5px_#2f7d5c]
                 "
               >
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                  <Icon className="size-8" />
+                Connect to markets.
+              </span>
+            </h1>
+
+            {/* Description */}
+            <p
+              className="
+                mx-auto
+                mt-7
+                max-w-2xl
+                text-base
+                leading-8
+                text-slate-500
+                lg:text-lg
+              "
+            >
+              Explore sourcing and export opportunities across diverse
+              industries, connecting global buyers with suitable Indian
+              manufacturers and suppliers.
+            </p>
+
+            {/* Buttons */}
+            <div className="mt-9 flex flex-wrap justify-center gap-3">
+              <Link href="/products">
+                <Button
+                  size="lg"
+                  className="
+                    h-12
+                    rounded-xl
+                    bg-[#132838]
+                    px-6
+                    text-sm
+                    font-semibold
+                    transition-colors
+                    hover:bg-[#2f7d5c]
+                  "
+                >
+                  Explore Products
+                  <ArrowRight className="ml-2 size-4" />
+                </Button>
+              </Link>
+
+              <Link href="/request-quote">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="
+                    h-12
+                    rounded-xl
+                    border-slate-300
+                    bg-transparent
+                    px-6
+                    text-sm
+                    font-semibold
+                    text-[#132838]
+                    hover:border-[#2f7d5c]
+                    hover:bg-transparent
+                    hover:text-[#2f7d5c]
+                  "
+                >
+                  Request Quote
+                </Button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Minimal Stats */}
+          <div
+            className="
+              mx-auto
+              mt-16
+              grid
+              w-full
+              max-w-4xl
+              grid-cols-2
+              border-t
+              border-slate-200
+              md:grid-cols-4
+            "
+          >
+            {stats.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <div
+                  key={item.label}
+                  className="
+                    group
+                    border-b
+                    border-slate-200
+                    px-5
+                    py-6
+                    text-center
+                    transition-colors
+                    duration-300
+                    md:border-b-0
+                    md:border-r
+                    md:last:border-r-0
+                    hover:bg-[#2f7d5c]/[0.03]
+                  "
+                >
+                  <Icon
+                    className="
+                      mx-auto
+                      size-4
+                      text-slate-400
+                      transition-colors
+                      duration-300
+                      group-hover:text-[#2f7d5c]
+                    "
+                    strokeWidth={1.5}
+                  />
+
+                  <h3
+                    className="
+                      mt-3
+                      text-lg
+                      font-bold
+                      tracking-[-0.02em]
+                      text-[#132838]
+                    "
+                  >
+                    {item.value}
+                  </h3>
+
+                  <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.14em] text-slate-400">
+                    {item.label}
+                  </p>
                 </div>
-
-                <h3 className="mt-6 text-4xl font-black">
-                  {item.value}
-                </h3>
-
-                <p className="mt-2 text-muted-foreground">
-                  {item.label}
-                </p>
-
-              </div>
-            );
-          })}
-
+              );
+            })}
+          </div>
         </div>
-
       </Container>
-
     </section>
   );
 }

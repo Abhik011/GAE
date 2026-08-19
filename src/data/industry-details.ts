@@ -144,6 +144,7 @@ export const industryDetails: Record<string, IndustryDetails> = {
         image: "/images/products/spices.jpg",
         description: "Authentic Indian spices for global markets.",
       },
+      
     ],
 
     capabilities: defaultCapabilities,
@@ -339,4 +340,34 @@ export const industryDetails: Record<string, IndustryDetails> = {
     process: defaultProcess,
     faq: defaultFaq,
   },
+
+textiles: {
+  overview:
+    "India is a major global hub for textiles and apparel manufacturing. GlobalAtlas Exim helps international buyers explore suitable Indian manufacturers for fabrics, garments, home textiles and customised apparel requirements.",
+
+  products: [
+    {
+      name: "Garments",
+      image: "/images/products/garments.jpg",
+      description:
+        "Ready-made apparel and customised garment manufacturing solutions.",
+    },
+    {
+      name: "Fabrics",
+      image: "/images/products/fabrics.jpg",
+      description:
+        "Cotton, blended, technical and other textile fabric options.",
+    },
+    {
+      name: "Home Textiles",
+      image: "/images/products/home-textiles.jpg",
+      description:
+        "Bed linen, towels, cushions and other home textile products.",
+    },
+  ],
+
+  capabilities: defaultCapabilities,
+  process: defaultProcess,
+  faq: defaultFaq,
+},
 };

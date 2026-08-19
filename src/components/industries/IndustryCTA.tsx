@@ -1,12 +1,6 @@
 import Link from "next/link";
 
-import {
-  ArrowRight,
-  Globe2,
-  ShieldCheck,
-  Factory,
-  Truck,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import Container from "@/components/ui/container/Container";
 import { Button } from "@/components/ui/buttons/button";
@@ -17,202 +11,89 @@ interface IndustryCTAProps {
   };
 }
 
-const features = [
-  {
-    icon: Factory,
-    title: "Verified Manufacturers",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Quality Assurance",
-  },
-  {
-    icon: Globe2,
-    title: "Worldwide Export",
-  },
-  {
-    icon: Truck,
-    title: "End-to-End Logistics",
-  },
-];
-
 export default function IndustryCTA({
   industry,
 }: IndustryCTAProps) {
   return (
-    <section className="relative overflow-hidden py-32">
-
-      {/* Background */}
-
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-[#1557B0] to-[#0F3D7A]" />
-
-      <div className="absolute -left-48 top-0 h-[420px] w-[420px] rounded-full bg-white/10 blur-[120px]" />
-
-      <div className="absolute -right-48 bottom-0 h-[420px] w-[420px] rounded-full bg-white/10 blur-[120px]" />
-
+    <section className="border-t border-slate-200 bg-white py-20 lg:py-24">
       <Container>
+        <div
+          className="
+            flex
+            flex-col
+            gap-10
+            border
+            border-slate-200
+            bg-slate-50
+            p-8
+            lg:flex-row
+            lg:items-end
+            lg:justify-between
+            lg:p-12
+          "
+        >
+          {/* Content */}
 
-        <div className="relative">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-4">
+              <span className="text-[11px] font-bold tracking-[0.28em] text-[#2f7d5c]">
+                GET STARTED
+              </span>
 
-          {/* Heading */}
-
-          <div className="mx-auto max-w-4xl text-center">
-
-            <span
-              className="
-                inline-flex
-                rounded-full
-                border
-                border-white/20
-                bg-white/10
-                px-5
-                py-2
-                text-sm
-                font-semibold
-                uppercase
-                tracking-[0.18em]
-                text-white
-              "
-            >
-              Ready to Source?
-            </span>
+              <span className="h-px w-10 bg-[#2f7d5c]/30" />
+            </div>
 
             <h2
               className="
-                mt-8
+                mt-5
                 font-heading
-                text-5xl
+                text-3xl
                 font-black
-                leading-tight
-                text-white
-                lg:text-7xl
+                leading-[1.1]
+                tracking-[-0.035em]
+                text-[#132838]
+                sm:text-4xl
               "
             >
-              Source Premium
-              <br />
-
-              {industry.title} Products
+              Looking to source
+              <span className="block text-[#2f7d5c]">
+                {industry.title} products?
+              </span>
             </h2>
 
-            <p
-              className="
-                mx-auto
-                mt-8
-                max-w-3xl
-                text-xl
-                leading-9
-                text-white/80
-              "
-            >
-              Connect with verified Indian manufacturers, receive
-              competitive quotations, and let GlobalAtlas Exim manage
-              quality assurance, export documentation, and international
-              logistics from start to finish.
+            <p className="mt-5 max-w-xl text-base leading-7 text-slate-500">
+              Share your product requirements, quantity, specifications, and
+              destination market. Our team will review your inquiry and help
+              identify suitable sourcing options.
             </p>
-
           </div>
 
-          {/* Buttons */}
+          {/* Actions */}
 
-          <div className="mt-14 flex flex-wrap justify-center gap-5">
-
+          <div className="flex flex-wrap gap-3 lg:shrink-0">
             <Link href="/request-quote">
-
               <Button
                 size="lg"
-                className="
-                  h-14
-                  rounded-2xl
-                  bg-white
-                  px-8
-                  text-primary
-                  hover:bg-white/90
-                "
+                className="h-12 rounded-xl px-6"
               >
-                Request Quote
+                Request a Quote
 
-                <ArrowRight className="ml-2 size-5" />
-
+                <ArrowRight className="ml-2 size-4" />
               </Button>
-
             </Link>
 
             <Link href="/contact">
-
               <Button
                 variant="outline"
                 size="lg"
-                className="
-                  h-14
-                  rounded-2xl
-                  border-white/20
-                  bg-transparent
-                  px-8
-                  text-white
-                  hover:bg-white
-                  hover:text-primary
-                "
+                className="h-12 rounded-xl border-slate-300 px-6"
               >
-                Talk to an Expert
+                Contact Us
               </Button>
-
             </Link>
-
           </div>
-
-          {/* Features */}
-
-          <div className="mt-24 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-
-            {features.map((feature) => {
-              const Icon = feature.icon;
-
-              return (
-                <div
-                  key={feature.title}
-                  className="
-                    rounded-[28px]
-                    border
-                    border-white/10
-                    bg-white/10
-                    p-8
-                    text-center
-                    backdrop-blur-xl
-                    transition-all
-                    duration-300
-                    hover:bg-white/15
-                  "
-                >
-                  <div
-                    className="
-                      mx-auto
-                      flex
-                      h-16
-                      w-16
-                      items-center
-                      justify-center
-                      rounded-2xl
-                      bg-white/10
-                      text-white
-                    "
-                  >
-                    <Icon className="size-8" />
-                  </div>
-
-                  <h3 className="mt-6 text-lg font-semibold text-white">
-                    {feature.title}
-                  </h3>
-
-                </div>
-              );
-            })}
-
-          </div>
-
         </div>
-
       </Container>
-
     </section>
   );
 }

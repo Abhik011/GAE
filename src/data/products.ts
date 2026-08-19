@@ -24,9 +24,9 @@ export const products = [
     title: "Cumin Seeds",
     category: "Agriculture",
     description: "Export-quality whole cumin seeds.",
-    image: "/images/products/cumin.jpg",
+    image: "/images/products/cumin-seeds.jpg",
     icon: Package,
-    href: "/products/cumin",
+    href: "/products/cumin-seeds",
   },
   {
     slug: "red-chilli",

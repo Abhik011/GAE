@@ -12,69 +12,55 @@ const faqs = [
   {
     question: "How quickly will I receive a response?",
     answer:
-      "We typically respond to all inquiries within 24–48 business hours.",
+      "We typically respond to inquiries within 24–48 business hours.",
   },
   {
-    question: "Can I request products that are not listed on your website?",
+    question: "Can I request products not listed on your website?",
     answer:
-      "Yes. We can source custom products and connect you with verified manufacturers based on your requirements.",
+      "Yes. Share your requirements and we can help identify suitable manufacturers.",
   },
   {
     question: "Do you work with international buyers?",
     answer:
-      "Yes. We assist buyers worldwide with sourcing, export documentation, quality assurance, and logistics.",
+      "Yes. We support buyers worldwide with sourcing and export coordination.",
   },
   {
     question: "Do you support OEM and private label manufacturing?",
     answer:
-      "Yes. We work with manufacturers that provide OEM, ODM, and private label solutions for various industries.",
+      "Yes. We can help connect you with manufacturers offering OEM, ODM, and private-label solutions.",
   },
 ];
 
 export default function ContactFAQ() {
   return (
-    <section className="py-28">
-
+    <section className="bg-white py-20 lg:py-28">
       <Container>
-
         <SectionHeader
           badge="FAQ"
-          title="Frequently Asked Questions"
-          description="Find quick answers to common questions about our sourcing and export services."
+          title="Common Questions"
+          description="Quick answers about sourcing and working with GlobalAtlas Exim."
         />
 
-        <div className="mx-auto mt-16 max-w-4xl">
-
-          <Accordion
-            className="space-y-5"
-          >
-
+        <div className="mx-auto mt-12 max-w-3xl">
+          <Accordion className="divide-y divide-slate-200">
             {faqs.map((faq, index) => (
-
               <AccordionItem
-                key={index}
+                key={faq.question}
                 value={`faq-${index}`}
-                className="rounded-[28px] border border-border bg-white px-8 shadow-sm"
+                className="border-0"
               >
-
-                <AccordionTrigger className="py-6 text-left text-lg font-semibold">
+                <AccordionTrigger className="py-6 text-left text-base font-semibold text-[#132838] hover:text-[#2f7d5c]">
                   {faq.question}
                 </AccordionTrigger>
 
-                <AccordionContent className="pb-6 leading-8 text-muted-foreground">
+                <AccordionContent className="pb-6 pr-10 text-sm leading-7 text-slate-500">
                   {faq.answer}
                 </AccordionContent>
-
               </AccordionItem>
-
             ))}
-
           </Accordion>
-
         </div>
-
       </Container>
-
     </section>
   );
 }

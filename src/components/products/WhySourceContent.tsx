@@ -1,104 +1,161 @@
 import {
-  BadgeCheck,
   Building2,
-  FileCheck2,
-  PackageCheck,
   ShieldCheck,
+  FileCheck2,
   Ship,
 } from "lucide-react";
 
 const features = [
   {
+    number: "01",
     icon: Building2,
     title: "Verified Manufacturers",
     description:
-      "Every supplier is carefully verified before joining our network.",
+      "Connect with suitable Indian manufacturers for your sourcing requirements.",
   },
   {
+    number: "02",
     icon: ShieldCheck,
-    title: "Quality Inspection",
+    title: "Quality Support",
     description:
-      "Independent inspections ensure every shipment meets expectations.",
+      "Support for quality checks and product requirements before export.",
   },
   {
+    number: "03",
     icon: FileCheck2,
     title: "Export Documentation",
     description:
-      "Complete documentation support for hassle-free international trade.",
+      "Guidance through essential documentation for international trade.",
   },
   {
+    number: "04",
     icon: Ship,
-    title: "Global Logistics",
+    title: "Logistics Coordination",
     description:
-      "Sea, air and land freight managed from origin to destination.",
-  },
-  {
-    icon: PackageCheck,
-    title: "Reliable Packaging",
-    description:
-      "Export-grade packaging designed for safe international delivery.",
-  },
-  {
-    icon: BadgeCheck,
-    title: "Dedicated Support",
-    description:
-      "A single point of contact throughout your sourcing journey.",
+      "Helping coordinate the movement of goods across international markets.",
   },
 ];
 
 export default function WhySourceContent() {
   return (
     <div>
+      {/* Label */}
 
-      <span className="inline-flex rounded-full bg-primary/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.15em] text-primary">
-        Why GlobalAtlas Exim
-      </span>
-
-      <h2 className="mt-6 font-heading text-5xl font-black leading-tight">
-        Your Trusted
-        <span className="block text-primary">
-          Sourcing Partner.
+      <div className="flex items-center gap-4">
+        <span className="text-[11px] font-bold tracking-[0.28em] text-[#2f7d5c]">
+          03
         </span>
-      </h2>
 
-      <p className="mt-8 max-w-xl text-lg leading-8 text-muted-foreground">
-        We simplify global sourcing by connecting buyers with trusted
-        Indian manufacturers while managing verification, quality,
-        logistics, and export compliance.
-      </p>
+        <span className="h-px w-10 bg-[#2f7d5c]/30" />
 
-      <div className="mt-12 space-y-8">
+        <span className="text-[11px] font-bold tracking-[0.28em] text-slate-400">
+          WHY SOURCE WITH US
+        </span>
+      </div>
 
-        {features.map((item) => {
+      {/* Header */}
+
+      <div className="mt-7 grid gap-8 border-b border-slate-200 pb-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+        <h2
+          className="
+            max-w-3xl
+            font-heading
+            text-5xl
+            font-black
+            leading-[0.98]
+            tracking-[-0.05em]
+            text-[#132838]
+            sm:text-6xl
+            lg:text-7xl
+          "
+        >
+          Build stronger
+          <span className="block text-[#2f7d5c]">
+            trade connections.
+          </span>
+        </h2>
+
+        <p className="max-w-xl text-base leading-8 text-slate-500 lg:text-lg">
+          We help businesses explore international sourcing opportunities,
+          connect with suitable partners, and navigate key stages of the
+          global trade process with greater confidence.
+        </p>
+      </div>
+
+      {/* Features */}
+
+      <div className="grid border-t-0 border-slate-200 lg:grid-cols-2 lg:divide-x lg:divide-slate-200">
+        {features.map((item, index) => {
           const Icon = item.icon;
 
           return (
             <div
               key={item.title}
-              className="flex gap-5"
+              className={`
+                group
+                flex
+                gap-5
+                border-b
+                border-slate-200
+                py-8
+                transition-all
+                duration-300
+                hover:bg-white/40
+                ${index % 2 === 0 ? "lg:pr-10" : "lg:pl-10"}
+              `}
             >
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                <Icon className="size-7" />
-              </div>
+              <span
+                className="
+                  pt-1
+                  text-[10px]
+                  font-bold
+                  tracking-[0.16em]
+                  text-slate-400
+                  transition-colors
+                  duration-300
+                  group-hover:text-[#2f7d5c]
+                "
+              >
+                {item.number}
+              </span>
+
+              <Icon
+                className="
+                  mt-0.5
+                  size-5
+                  shrink-0
+                  text-slate-400
+                  transition-all
+                  duration-300
+                  group-hover:text-[#2f7d5c]
+                "
+                strokeWidth={1.5}
+              />
 
               <div>
-
-                <h3 className="text-xl font-bold">
+                <h3
+                  className="
+                    font-heading
+                    text-xl
+                    font-bold
+                    tracking-[-0.025em]
+                    text-[#132838]
+                    transition-colors
+                    duration-300
+                    group-hover:text-[#2f7d5c]
+                  "
+                >
                   {item.title}
                 </h3>
 
-                <p className="mt-2 leading-7 text-muted-foreground">
+                <p className="mt-3 max-w-md text-sm leading-7 text-slate-500">
                   {item.description}
                 </p>
-
               </div>
-
             </div>
           );
         })}
-
       </div>
-
     </div>
   );
 }

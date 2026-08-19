@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Mail, Quote } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 import { RiTwitterXFill } from "react-icons/ri";
@@ -11,6 +11,8 @@ interface LeaderCardProps {
   role: string;
   bio: string;
   image: string;
+
+  profileUrl: string;
 
   linkedin?: string;
   twitter?: string;
@@ -23,319 +25,213 @@ export default function LeaderCard({
   role,
   bio,
   image,
+  profileUrl,
   linkedin,
   twitter,
   instagram,
   email,
 }: LeaderCardProps) {
   return (
-    <div
+    <article
       className="
         group
-        relative
-        overflow-hidden
-
-        rounded-[36px]
-
-        border
+        border-t
         border-slate-200
-
-        bg-gradient-to-br
-        from-white
-        via-white
-        to-slate-50
-
-        p-10
-
-        transition-all
-        duration-500
-
-        hover:-translate-y-1
-        hover:border-primary/20
-        hover:shadow-[0_30px_80px_rgba(15,61,122,.12)]
+        py-6
+        transition-colors
+        duration-300
+        hover:border-[#2f7d5c]
       "
     >
-      {/* Background Glow */}
-
-      <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-primary/5 blur-3xl" />
-
-      <div className="relative">
-
-        {/* Image */}
-
-        <div className="flex justify-center">
-
-          <div
+      <div className="grid gap-6 md:grid-cols-[180px_1fr] md:items-start lg:grid-cols-[200px_1fr]">
+        {/* Portrait */}
+        <div className="relative aspect-[4/5] overflow-hidden bg-[#edf4f0]">
+          <Image
+            src={image}
+            alt={name}
+            fill
             className="
-              relative
-
-              h-52
-              w-52
-
-              overflow-hidden
-
-              rounded-full
-
-              border-8
-              border-white
-
-              shadow-xl
+              object-cover
+              object-top
+              transition-transform
+              duration-700
+              group-hover:scale-[1.04]
             "
-          >
-            <Image
-              src={image}
-              alt={name}
-              fill
-              className="
-                object-cover
-                object-top
-
-                transition-transform
-                duration-700
-
-                group-hover:scale-105
-              "
-            />
-          </div>
-
-        </div>
-
-        {/* Role */}
-
-        <div className="mt-8 text-center">
+          />
 
           <span
             className="
-              inline-flex
-
-              rounded-full
-
-              bg-primary/10
-
-              px-5
-              py-2
-
-              text-xs
-
-              font-semibold
-
+              absolute
+              left-4
+              top-4
+              bg-white/90
+              px-3
+              py-1.5
+              text-[10px]
+              font-bold
               tracking-[0.2em]
-
-              uppercase
-
-              text-primary
+              text-[#132838]
+              backdrop-blur-md
             "
           >
-            {role}
-          </span>
-
-        </div>
-
-        {/* Name */}
-
-        <h3
-          className="
-            mt-6
-
-            text-center
-
-            font-heading
-
-            text-4xl
-
-            font-black
-
-            text-slate-900
-          "
-        >
-          {name}
-        </h3>
-
-        {/* Expertise */}
-
-        <div
-          className="
-            mt-5
-
-            flex
-
-            flex-wrap
-
-            justify-center
-
-            gap-2
-          "
-        >
-          <span className="rounded-full bg-slate-100 px-4 py-2 text-sm">
-            Global Trade
-          </span>
-
-          <span className="rounded-full bg-slate-100 px-4 py-2 text-sm">
-            Export
-          </span>
-
-          <span className="rounded-full bg-slate-100 px-4 py-2 text-sm">
-            Technology
+            LEADERSHIP
           </span>
         </div>
 
-        {/* Quote */}
+        {/* Information */}
+        <div className="flex min-h-full flex-col">
+          {/* Top */}
+          <div className="flex items-start justify-between gap-5">
+            <div>
+              <p
+                className="
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  tracking-[0.22em]
+                  text-[#2f7d5c]
+                "
+              >
+                {role}
+              </p>
 
-        <div className="mt-10">
+              <h3
+                className="
+                  mt-3
+                  font-heading
+                  text-3xl
+                  font-black
+                  leading-[1.05]
+                  tracking-[-0.04em]
+                  text-[#132838]
+                  sm:text-4xl
+                "
+              >
+                {name}
+              </h3>
+            </div>
 
-          <Quote className="mx-auto size-8 text-primary/30" />
+            <span className="text-xs font-bold tracking-[0.18em] text-slate-300">
+              01
+            </span>
+          </div>
 
+          {/* Bio */}
           <p
             className="
-              mx-auto
-              mt-5
-              max-w-md
-
-              text-center
-
-              text-lg
-
-              italic
-
-              leading-8
-
-              text-slate-600
+              mt-6
+              max-w-xl
+              text-sm
+              leading-7
+              text-slate-500
+              sm:text-base
             "
           >
             {bio}
           </p>
 
-        </div>
+          {/* Areas */}
+          <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
+            <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">
+              Global Trade
+            </span>
 
-        {/* Social */}
+            <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">
+              Export
+            </span>
 
-        <div
-          className="
-            mt-10
+            <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400">
+              Business Development
+            </span>
+          </div>
 
-            flex
+          {/* Bottom */}
+          <div
+            className="
+              mt-8
+              flex
+              flex-wrap
+              items-center
+              justify-between
+              gap-5
+              border-t
+              border-slate-100
+              pt-5
+            "
+          >
+            {/* Social */}
+            <div className="flex items-center gap-3">
+              {linkedin && (
+                <Link
+                  href={linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${name} on LinkedIn`}
+                  className="text-slate-400 transition-colors hover:text-[#2f7d5c]"
+                >
+                  <FaLinkedinIn className="size-[18px]" />
+                </Link>
+              )}
 
-            justify-center
+              {twitter && (
+                <Link
+                  href={twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${name} on X`}
+                  className="text-slate-400 transition-colors hover:text-[#132838]"
+                >
+                  <RiTwitterXFill className="size-[18px]" />
+                </Link>
+              )}
 
-            gap-4
-          "
-        >
-          {linkedin && (
+              {instagram && (
+                <Link
+                  href={instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${name} on Instagram`}
+                  className="text-slate-400 transition-colors hover:text-[#2f7d5c]"
+                >
+                  <FaInstagram className="size-[18px]" />
+                </Link>
+              )}
+
+              {email && (
+                <Link
+                  href={`mailto:${email}`}
+                  aria-label={`Email ${name}`}
+                  className="text-slate-400 transition-colors hover:text-[#2f7d5c]"
+                >
+                  <Mail className="size-[18px]" />
+                </Link>
+              )}
+            </div>
+
+            {/* Dynamic Profile */}
             <Link
-              href={linkedin}
-              target="_blank"
+              href={profileUrl}
               className="
-                flex
-
-                h-12
-                w-12
-
+                group/profile
+                inline-flex
                 items-center
-                justify-center
-
-                rounded-2xl
-
-                bg-slate-100
-
-                transition-all
-
-                duration-300
-
-                hover:bg-[#0A66C2]
-                hover:text-white
+                gap-2
+                text-[10px]
+                font-bold
+                uppercase
+                tracking-[0.18em]
+                text-[#132838]
+                transition-colors
+                hover:text-[#2f7d5c]
               "
             >
-              <FaLinkedinIn />
+              Full Profile
+
+              <ArrowUpRight className="size-4 transition-transform duration-300 group-hover/profile:translate-x-1 group-hover/profile:-translate-y-1" />
             </Link>
-          )}
-
-          {twitter && (
-            <Link
-              href={twitter}
-              target="_blank"
-              className="
-                flex
-
-                h-12
-                w-12
-
-                items-center
-                justify-center
-
-                rounded-2xl
-
-                bg-slate-100
-
-                transition-all
-
-                duration-300
-
-                hover:bg-black
-                hover:text-white
-              "
-            >
-              <RiTwitterXFill />
-            </Link>
-          )}
-
-          {instagram && (
-            <Link
-              href={instagram}
-              target="_blank"
-              className="
-                flex
-
-                h-12
-                w-12
-
-                items-center
-                justify-center
-
-                rounded-2xl
-
-                bg-slate-100
-
-                transition-all
-
-                duration-300
-
-                hover:bg-pink-500
-                hover:text-white
-              "
-            >
-              <FaInstagram />
-            </Link>
-          )}
-
-          {email && (
-            <Link
-              href={`mailto:${email}`}
-              className="
-                flex
-
-                h-12
-                w-12
-
-                items-center
-                justify-center
-
-                rounded-2xl
-
-                bg-slate-100
-
-                transition-all
-
-                duration-300
-
-                hover:bg-primary
-                hover:text-white
-              "
-            >
-              <Mail className="size-5" />
-            </Link>
-          )}
+          </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 }

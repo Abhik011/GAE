@@ -10,6 +10,7 @@ import {
   Car,
   Hotel,
   UtensilsCrossed,
+  Shirt,
 } from "lucide-react";
 
 import Container from "@/components/ui/container/Container";
@@ -64,6 +65,13 @@ const industries = [
     description: "Packaged foods, beverages and ingredients.",
     icon: UtensilsCrossed,
   },
+  {
+    title: "Textiles & Apparel",
+    slug: "textiles",
+    description: "Textile, garment, and apparel sourcing from Indian manufacturers.",
+    image: "/images/industries/textiles-apparel.jpg",
+    icon: Shirt,
+  }
 ];
 
 export default function IndustriesServed() {

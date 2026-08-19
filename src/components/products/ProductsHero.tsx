@@ -5,26 +5,55 @@ import HeroPreview from "./HeroPreview";
 
 export default function ProductsHero() {
   return (
-    <section className="relative overflow-hidden bg-slate-50 pt-40 pb-28">
+    <section className="relative min-h-screen overflow-hidden bg-[#f7f8f7]">
+      {/* Very subtle background grid */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          opacity-50
+          [background-image:linear-gradient(rgba(19,40,56,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(19,40,56,0.04)_1px,transparent_1px)]
+          [background-size:72px_72px]
+        "
+      />
 
-      {/* Background Glow */}
-
-      <div className="absolute -left-40 top-0 h-96 w-96 rounded-full bg-primary/10 blur-[120px]" />
-
-      <div className="absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-sky-500/10 blur-[120px]" />
+      {/* Subtle green atmosphere */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          -right-40
+          -top-40
+          h-[500px]
+          w-[500px]
+          rounded-full
+          bg-[#2f7d5c]/5
+          blur-[140px]
+        "
+      />
 
       <Container>
-
-        <div className="grid items-center gap-20 lg:grid-cols-2">
-
+        <div
+          className="
+            relative
+            grid
+            min-h-screen
+            items-center
+            gap-12
+            pt-28
+            pb-12
+            lg:grid-cols-[1.1fr_0.9fr]
+            lg:gap-20
+            lg:pt-24
+            lg:pb-10
+          "
+        >
           <HeroContent />
 
-          <HeroPreview />
-
+        
         </div>
-
       </Container>
-
     </section>
   );
 }

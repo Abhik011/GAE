@@ -14,16 +14,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <TrustedBy />
-      <About />
-      <ProductCategories />
-      <Industries />
-      <ExportProcess />
-      <WhyChoose />
-      <Countries />
-      <Testimonials />
-      <FAQ />
-      <CTA />
+      
     </>
   );
 }

@@ -7,6 +7,7 @@ import {
   Car,
   Hotel,
   UtensilsCrossed,
+  Shirt,
 } from "lucide-react";
 
 export interface Industry {
@@ -88,5 +89,12 @@ export const industries: Industry[] = [
       "Ingredients, packaged foods, beverages, and exports.",
     image: "/images/industries/food-processing.jpg",
     icon: UtensilsCrossed,
+  },
+  {
+    slug: "textiles",
+    title: "Textiles & Apparel",
+    description: "Textile, garment, and apparel sourcing from Indian manufacturers.",
+    image: "/images/industries/textiles-apparel.jpg",
+    icon: Shirt,
   },
 ];

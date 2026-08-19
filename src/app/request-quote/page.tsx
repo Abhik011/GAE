@@ -8,7 +8,7 @@ import QuoteCTA from "@/components/request-quote/QuoteCTA";
 export const metadata = {
   title: "Request a Quote | GlobalAtlas Exim",
   description:
-    "Request a customized sourcing and export quotation from GlobalAtlas Exim. Connect with verified Indian manufacturers and receive competitive pricing for your products.",
+    "Request a sourcing quote from GlobalAtlas Exim and connect with suitable Indian manufacturers for your product requirements.",
 };
 
 export default function RequestQuotePage() {
@@ -18,13 +18,13 @@ export default function RequestQuotePage() {
 
       <WhyRequestQuote />
 
-      <QuoteProcess />
-
       <QuoteForm />
+
+      <QuoteProcess />
 
       <QuoteFAQ />
 
-      <QuoteCTA />
+
     </>
   );
 }

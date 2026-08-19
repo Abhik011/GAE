@@ -1,46 +1,33 @@
 import ProductsHero from "@/components/products/ProductsHero";
 import CategoryGrid from "@/components/products/CategoryGrid";
 import FeaturedProducts from "@/components/products/FeaturedProducts";
-import Industries from "@/components/products/Industries";
 import WhySource from "@/components/products/WhySource";
 import SourcingProcess from "@/components/products/SourcingProcess";
-import QualityAssurance from "@/components/products/QualityAssurance";
-import ExportCapabilities from "@/components/products/ExportCapabilities";
-import ProductsFAQ from "@/components/products/ProductsFAQ";
 import ProductsCTA from "@/components/products/ProductsCTA";
+import ProductsFAQ from "@/components/products/ProductsFAQ";
+
 
 export default function ProductsPage() {
   return (
     <>
-      {/* Hero */}
+      {/* 01 — Landing */}
       <ProductsHero />
 
-      {/* Browse Categories */}
+      {/* 02 — Product Categories */}
       <CategoryGrid />
 
-      {/* Featured Export Products */}
+      {/* 03 — Featured Opportunities */}
       <FeaturedProducts />
 
-      {/* Industries We Serve */}
-      <Industries />
-
-      {/* Why Source Through GlobalAtlas Exim */}
+      {/* 04 — Why Work With Us */}
       <WhySource />
 
-      {/* Our Sourcing Process */}
+      {/* 05 — How It Works */}
       <SourcingProcess />
 
-      {/* Quality Assurance */}
-      <QualityAssurance />
-
-      {/* Export Capabilities */}
-      <ExportCapabilities />
-
-      {/* Frequently Asked Questions */}
-      <ProductsFAQ />
-
-      {/* Call To Action */}
+      {/* 06 — Final CTA */}
       <ProductsCTA />
+      <ProductsFAQ />
     </>
   );
 }

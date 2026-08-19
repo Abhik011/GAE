@@ -18,192 +18,103 @@ const features = [
   },
   {
     icon: ShieldCheck,
-    title: "Quality Assured",
+    title: "Quality Support",
   },
   {
     icon: Globe2,
-    title: "Worldwide Export",
+    title: "Global Export",
   },
   {
     icon: Truck,
-    title: "End-to-End Logistics",
+    title: "Logistics Coordination",
   },
 ];
 
 export default function ServicesCTA() {
   return (
-    <section className="relative overflow-hidden py-32">
-
-      {/* Background */}
-
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-[#1557B0] to-[#0F3D7A]" />
-
-      <div className="absolute -left-40 top-0 h-[420px] w-[420px] rounded-full bg-white/10 blur-[120px]" />
-
-      <div className="absolute -right-40 bottom-0 h-[420px] w-[420px] rounded-full bg-white/10 blur-[120px]" />
-
+    <section className="bg-white py-20 lg:py-24">
       <Container>
+        <div className="relative overflow-hidden rounded-3xl bg-[#132838] px-6 py-14 sm:px-10 lg:px-16 lg:py-16">
+          {/* Subtle background */}
 
-        <div className="relative">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(47,125,92,0.22),transparent_40%)]" />
 
-          {/* Heading */}
+          <div className="pointer-events-none absolute -right-20 -top-20 size-64 rounded-full bg-[#2f7d5c]/10 blur-3xl" />
 
-          <div className="mx-auto max-w-4xl text-center">
+          <div className="relative mx-auto max-w-4xl text-center">
+            {/* Label */}
 
-            <span
-              className="
-                inline-flex
-                rounded-full
-                border
-                border-white/20
-                bg-white/10
-                px-5
-                py-2
-                text-sm
-                font-semibold
-                uppercase
-                tracking-[0.18em]
-                text-white
-              "
-            >
-              Let's Work Together
-            </span>
+            <div className="flex items-center justify-center gap-4">
+              <span className="text-[11px] font-bold tracking-[0.28em] text-[#72b596]">
+                LET&apos;S WORK TOGETHER
+              </span>
 
-            <h2
-              className="
-                mt-8
-                font-heading
-                text-5xl
-                font-black
-                leading-tight
-                text-white
-                lg:text-7xl
-              "
-            >
-              Build a Smarter
-              <br />
+              <span className="h-px w-10 bg-[#72b596]/40" />
+            </div>
 
-              Global Supply Chain
+            {/* Heading */}
+
+            <h2 className="mt-6 font-heading text-3xl font-black leading-[1.1] tracking-[-0.04em] text-white sm:text-4xl lg:text-5xl">
+              Build a stronger supply chain
+              <span className="block text-[#72b596]">
+                with the right support.
+              </span>
             </h2>
 
-            <p
-              className="
-                mx-auto
-                mt-8
-                max-w-3xl
-                text-xl
-                leading-9
-                text-white/80
-              "
-            >
-              Whether you're sourcing products from India, expanding your
-              supplier network, or launching an OEM product, GlobalAtlas Exim is
-              ready to become your trusted sourcing and export partner.
+            {/* Description */}
+
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
+              From supplier sourcing and verification to export coordination,
+              GlobalAtlas Exim supports key stages of your international
+              sourcing journey from India.
             </p>
 
-          </div>
+            {/* Buttons */}
 
-          {/* Buttons */}
-
-          <div className="mt-14 flex flex-wrap justify-center gap-5">
-
-            <Link href="/request-quote">
-
-              <Button
-                size="lg"
-                className="
-                  h-14
-                  rounded-2xl
-                  bg-white
-                  px-8
-                  text-primary
-                  hover:bg-white/90
-                "
-              >
-                Request a Quote
-
-                <ArrowRight className="ml-2 size-5" />
-
-              </Button>
-
-            </Link>
-
-            <Link href="/contact">
-
-              <Button
-                size="lg"
-                variant="outline"
-                className="
-                  h-14
-                  rounded-2xl
-                  border-white/20
-                  bg-transparent
-                  px-8
-                  text-white
-                  hover:bg-white
-                  hover:text-primary
-                "
-              >
-                Schedule Consultation
-              </Button>
-
-            </Link>
-
-          </div>
-
-          {/* Trust Features */}
-
-          <div className="mt-24 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-
-            {features.map((feature) => {
-              const Icon = feature.icon;
-
-              return (
-                <div
-                  key={feature.title}
-                  className="
-                    rounded-[28px]
-                    border
-                    border-white/10
-                    bg-white/10
-                    p-8
-                    text-center
-                    backdrop-blur-xl
-                    transition-all
-                    duration-300
-                    hover:bg-white/15
-                  "
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <Link href="/request-quote">
+                <Button
+                  size="lg"
+                  className="h-12 rounded-xl bg-[#2f7d5c] px-6 text-white hover:bg-[#256b4e]"
                 >
+                  Request a Quote
+
+                  <ArrowRight className="ml-2 size-4" />
+                </Button>
+              </Link>
+
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="h-12 rounded-xl border-white/20 bg-transparent px-6 text-white hover:bg-white hover:text-[#132838]"
+                >
+                  Talk to Us
+                </Button>
+              </Link>
+            </div>
+
+            {/* Trust points */}
+
+            <div className="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-3 border-t border-white/10 pt-7">
+              {features.map((feature) => {
+                const Icon = feature.icon;
+
+                return (
                   <div
-                    className="
-                      mx-auto
-                      flex
-                      h-16
-                      w-16
-                      items-center
-                      justify-center
-                      rounded-2xl
-                      bg-white/10
-                      text-white
-                    "
+                    key={feature.title}
+                    className="flex items-center gap-2 text-xs font-medium text-slate-300 sm:text-sm"
                   >
-                    <Icon className="size-8" />
+                    <Icon className="size-4 text-[#72b596]" />
+
+                    <span>{feature.title}</span>
                   </div>
-
-                  <h3 className="mt-6 text-lg font-semibold text-white">
-                    {feature.title}
-                  </h3>
-
-                </div>
-              );
-            })}
-
+                );
+              })}
+            </div>
           </div>
-
         </div>
-
       </Container>
-
     </section>
   );
 }

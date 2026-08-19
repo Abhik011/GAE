@@ -1,0 +1,1412 @@
+/* ==========================================================
+   ABHIJEET KULKARNI — GLOBALATLAS DIGITAL PROFILE
+   Premium Minimal / Startup 2026 Design
+   ========================================================== */
+
+.ak-page {
+  --navy: #0c2030;
+  --navy-soft: #18364a;
+  --navy-light: #284b62;
+  --green: #2d9b68;
+  --green-light: #7de0ad;
+  --green-soft: #e9f7ef;
+  --text: #132431;
+  --muted: #71808b;
+  --border: #dce4e8;
+  --background: #f4f6f7;
+  --white: #ffffff;
+
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--background);
+  color: var(--text);
+}
+
+.markets-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  grid-template-rows: repeat(2, 220px);
+  gap: 18px;
+}
+
+.market-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px;
+  border: 1px solid rgba(16, 37, 55, 0.1);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.7);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.market-card:hover {
+  border-color: rgba(44, 165, 107, 0.4);
+  box-shadow: 0 24px 60px rgba(10, 31, 51, 0.1);
+  transform: translateY(-6px);
+}
+
+.market-card::before {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  color: rgba(10, 31, 51, 0.05);
+  font-size: 100px;
+  font-weight: 800;
+  line-height: 1;
+  content: attr(data-number);
+}
+
+.market-card-number {
+  position: relative;
+  z-index: 1;
+  color: var(--ga-green);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.market-card h3 {
+  position: relative;
+  z-index: 1;
+  max-width: 320px;
+  margin: 0;
+  color: var(--ga-navy);
+  font-size: clamp(24px, 2vw, 34px);
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.15;
+}
+.market-card-featured {
+  grid-row: span 2;
+  background: var(--ga-navy);
+}
+
+.market-card-featured h3 {
+  color: white;
+}
+
+.market-card-featured::before {
+  color: rgba(255, 255, 255, 0.04);
+  font-size: 180px;
+}
+
+.market-card-featured .market-card-number {
+  color: #7ed7ae;
+}
+
+/* ==========================================================
+   BACKGROUND
+   ========================================================== */
+
+.ak-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ak-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  background-image:
+    linear-gradient(to right,
+      rgba(12, 32, 48, 0.035) 1px,
+      transparent 1px),
+    linear-gradient(to bottom,
+      rgba(12, 32, 48, 0.035) 1px,
+      transparent 1px);
+  background-size: 64px 64px;
+}
+
+.ak-orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(20px);
+  animation: akFloat 12s ease-in-out infinite;
+}
+
+.ak-orb-one {
+  top: -250px;
+  right: -180px;
+  width: 700px;
+  height: 700px;
+  background: rgba(45, 155, 104, 0.14);
+}
+
+.ak-orb-two {
+  bottom: 10%;
+  left: -280px;
+  width: 600px;
+  height: 600px;
+  background: rgba(12, 32, 48, 0.08);
+  animation-delay: -5s;
+}
+
+.ak-line {
+  position: absolute;
+  width: 1px;
+  background: linear-gradient(to bottom,
+      transparent,
+      rgba(45, 155, 104, 0.2),
+      transparent);
+}
+
+.ak-line-one {
+  top: 0;
+  right: 14%;
+  height: 100%;
+}
+
+.ak-line-two {
+  top: 0;
+  left: 12%;
+  height: 100%;
+  opacity: 0.45;
+}
+
+/* ==========================================================
+   CONTAINER
+   ========================================================== */
+
+.ak-container {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 40px, 1100px);
+  margin: 0 auto;
+  padding: 28px 0 40px;
+}
+
+/* ==========================================================
+   HEADER
+   ========================================================== */
+
+.ak-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 54px;
+  animation: akFadeDown 0.7s ease both;
+}
+
+.ak-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.ak-brand-symbol {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background: var(--navy);
+  color: white;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  box-shadow: 0 10px 30px rgba(12, 32, 48, 0.16);
+}
+
+.ak-brand-symbol span:last-child {
+  color: var(--green-light);
+}
+
+.ak-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.ak-brand-text strong {
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.ak-brand-text small {
+  margin-top: 5px;
+  color: var(--green);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.ak-website {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.ak-website:hover {
+  color: var(--green);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+
+.ak-hero {
+  position: relative;
+  margin-top: 46px;
+  padding: 40px;
+  overflow: hidden;
+  border: 1px solid rgba(220, 228, 232, 0.9);
+  border-radius: 32px;
+  background:
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.94),
+      rgba(255, 255, 255, 0.72));
+  box-shadow:
+    0 30px 80px rgba(12, 32, 48, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  animation: akHeroIn 0.8s 0.1s ease both;
+}
+
+.ak-hero::before {
+  position: absolute;
+  top: -140px;
+  right: -120px;
+  width: 380px;
+  height: 380px;
+  border: 1px solid rgba(45, 155, 104, 0.13);
+  border-radius: 50%;
+  content: "";
+}
+
+.ak-hero::after {
+  position: absolute;
+  right: 70px;
+  bottom: -200px;
+  width: 320px;
+  height: 320px;
+  border: 1px solid rgba(12, 32, 48, 0.06);
+  border-radius: 50%;
+  content: "";
+}
+
+.ak-hero-top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ak-availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 13px;
+  border: 1px solid rgba(45, 155, 104, 0.22);
+  border-radius: 999px;
+  background: rgba(233, 247, 239, 0.7);
+  color: #287c56;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.ak-pulse {
+  position: relative;
+  display: flex;
+  width: 8px;
+  height: 8px;
+}
+
+.ak-pulse span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: akPulse 2s infinite;
+}
+
+.ak-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ak-location svg {
+  color: var(--green);
+}
+
+/* ==========================================================
+   HERO CONTENT
+   ========================================================== */
+
+.ak-hero-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: end;
+  padding: 65px 0 52px;
+}
+
+.ak-identity {
+  display: flex;
+  align-items: flex-end;
+  gap: 25px;
+}
+
+.ak-avatar-placeholder {
+  display: grid;
+  width: 130px;
+  height: 130px;
+  place-items: center;
+  border: 5px solid white;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 30%,
+      rgba(125, 224, 173, 0.35),
+      rgba(12, 32, 48, 0.14));
+  color: var(--navy);
+  box-shadow: 0 18px 45px rgba(12, 32, 48, 0.12);
+}
+
+.ak-avatar {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  flex: 0 0 130px;
+  flex-shrink: 0;
+}
+
+.ak-avatar-ring {
+  position: absolute;
+  inset: -8px;
+  border: 1px solid rgba(45, 155, 104, 0.35);
+  border-radius: 50%;
+  animation: akRotate 16s linear infinite;
+}
+
+.ak-avatar-image {
+  position: absolute;
+  inset: 0;
+  width: 130px;
+  height: 130px;
+  overflow: hidden;
+  border: 5px solid white;
+  border-radius: 50%;
+  background: #eef3f0;
+  box-shadow: 0 18px 45px rgba(12, 32, 48, 0.12);
+}
+
+.ak-avatar-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center top;
+}
+
+.ak-avatar-badge {
+  position: absolute;
+  right: -4px;
+  bottom: 6px;
+  z-index: 3;
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 4px solid white;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--green-light);
+}
+@media (max-width: 768px) {
+  .ak-avatar {
+    width: 140px;
+    height: 140px;
+  }
+}
+.ak-eyebrow {
+  margin: 0 0 13px;
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.ak-title-block h1 {
+  margin: 0;
+  color: var(--navy);
+  font-size: clamp(50px, 7vw, 82px);
+  font-weight: 800;
+  letter-spacing: -4px;
+  line-height: 0.88;
+}
+
+.ak-title-block h1 span {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--navy);
+}
+
+.ak-intro {
+  padding-bottom: 5px;
+}
+
+.ak-intro-line {
+  width: 46px;
+  height: 2px;
+  margin-bottom: 20px;
+  background: var(--green);
+}
+
+.ak-intro>p {
+  max-width: 350px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.ak-intro strong {
+  color: var(--navy);
+}
+
+.ak-role {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.ak-role svg {
+  color: var(--green);
+}
+
+.ak-role span {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+/* ==========================================================
+   ACTIONS
+   ========================================================== */
+
+.ak-actions {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 12px;
+}
+
+.ak-primary-action {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 18px;
+  border-radius: 18px;
+  background: var(--navy);
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 14px 35px rgba(12, 32, 48, 0.2);
+  transition: 0.3s ease;
+}
+
+.ak-primary-action:hover {
+  background: #12344a;
+  transform: translateY(-3px);
+}
+
+.ak-primary-action>svg {
+  margin-left: auto;
+  color: var(--green-light);
+}
+
+.ak-action-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 13px;
+  background: rgba(125, 224, 173, 0.12);
+  color: var(--green-light);
+}
+
+.ak-primary-action span:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.ak-primary-action small {
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.ak-secondary-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.ak-small-action {
+  display: flex;
+  min-height: 74px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.ak-small-action svg {
+  color: var(--green);
+}
+
+.ak-small-action:hover {
+  border-color: rgba(45, 155, 104, 0.45);
+  background: var(--green-soft);
+  transform: translateY(-3px);
+}
+
+.ak-scroll-indicator {
+  position: absolute;
+  right: 32px;
+  bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* ==========================================================
+   COMMON SECTIONS
+   ========================================================== */
+
+.ak-section-number {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.ak-section-label {
+  margin: 0;
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.ak-about,
+.ak-services,
+.ak-industries,
+.ak-social {
+  position: relative;
+  margin-top: 130px;
+}
+
+/* ==========================================================
+   ABOUT
+   ========================================================== */
+
+.ak-about {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 30px;
+}
+
+.ak-section-content h2,
+.ak-services h2,
+.ak-social h2 {
+  margin: 20px 0 0;
+  color: var(--navy);
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 1.05;
+}
+
+.ak-section-content h2 span,
+.ak-services h2 span {
+  color: var(--green);
+}
+
+.ak-about-text {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  max-width: 780px;
+  margin-top: 40px;
+}
+
+.ak-about-text p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.ak-about-text strong {
+  color: var(--navy);
+}
+
+/* ==========================================================
+   SERVICES
+   ========================================================== */
+
+.ak-services-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.ak-services-heading h2 {
+  margin: 0;
+  text-align: right;
+}
+
+.ak-service-list {
+  margin-top: 50px;
+  border-top: 1px solid var(--border);
+}
+
+.ak-service-card {
+  display: grid;
+  grid-template-columns: 55px 65px 1fr 40px;
+  gap: 20px;
+  align-items: center;
+  padding: 28px 15px;
+  border-bottom: 1px solid var(--border);
+  transition: 0.3s ease;
+}
+
+.ak-service-card:hover {
+  padding-right: 25px;
+  padding-left: 25px;
+  border-radius: 20px;
+  border-color: transparent;
+  background: white;
+  box-shadow: 0 20px 45px rgba(12, 32, 48, 0.06);
+}
+
+.ak-service-index {
+  color: #9aa7af;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.ak-service-icon {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border-radius: 17px;
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.ak-service-info h3 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 20px;
+  letter-spacing: -0.5px;
+}
+
+.ak-service-info p {
+  max-width: 570px;
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.ak-service-arrow {
+  color: var(--green);
+  transition: 0.3s ease;
+}
+
+.ak-service-card:hover .ak-service-arrow {
+  transform: translate(4px, -4px);
+}
+
+/* ==========================================================
+   INDUSTRIES
+   ========================================================== */
+
+.ak-industries-top {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.ak-industries-top>p {
+  max-width: 330px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.ak-industry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 42px;
+}
+
+.ak-industry-card {
+  position: relative;
+  min-height: 190px;
+  padding: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.7);
+  transition: 0.3s ease;
+}
+
+.ak-industry-card:hover {
+  border-color: rgba(45, 155, 104, 0.4);
+  box-shadow: 0 20px 45px rgba(12, 32, 48, 0.07);
+  transform: translateY(-5px);
+}
+
+.ak-industry-card>span {
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.ak-industry-card h3 {
+  position: absolute;
+  bottom: 22px;
+  left: 24px;
+  margin: 0;
+  color: var(--navy);
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.ak-industry-card svg {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: var(--green);
+}
+
+.ak-industry-large {
+  grid-row: span 2;
+  min-height: 392px;
+  background: var(--navy);
+  border-color: var(--navy);
+}
+
+.ak-industry-large h3 {
+  color: white;
+  font-size: 28px;
+}
+
+.ak-industry-large>span,
+.ak-industry-large svg {
+  color: var(--green-light);
+}
+
+/* ==========================================================
+   CONTACT
+   ========================================================== */
+
+.ak-contact {
+  position: relative;
+  margin-top: 130px;
+  padding: 55px;
+  overflow: hidden;
+  border-radius: 32px;
+  background: var(--navy);
+  color: white;
+  box-shadow: 0 30px 70px rgba(12, 32, 48, 0.2);
+}
+
+.ak-contact-glow {
+  position: absolute;
+  top: -250px;
+  right: -150px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+      rgba(45, 155, 104, 0.35),
+      transparent 65%);
+}
+
+.ak-contact-main,
+.ak-contact-bottom {
+  position: relative;
+  z-index: 1;
+}
+
+.ak-contact-main {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.ak-contact .ak-section-label {
+  color: var(--green-light);
+}
+
+.ak-contact h2 {
+  margin: 18px 0 0;
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 1.05;
+}
+
+.ak-contact h2 span {
+  color: var(--green-light);
+}
+
+.ak-contact-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+  padding: 17px 20px 17px 24px;
+  border-radius: 16px;
+  background: var(--green);
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.ak-contact-button:hover {
+  background: #3bb47a;
+  transform: translateY(-3px);
+}
+
+.ak-contact-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 35px;
+  margin-top: 70px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.ak-contact-bottom a,
+.ak-contact-bottom div {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.ak-contact-bottom svg {
+  color: var(--green-light);
+}
+
+/* ==========================================================
+   SOCIAL
+   ========================================================== */
+
+.ak-social {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.ak-social h2 {
+  margin-top: 15px;
+}
+
+.ak-social-links {
+  display: grid;
+  gap: 12px;
+}
+
+.ak-social-links a {
+  display: grid;
+  grid-template-columns: 52px 1fr 30px;
+  align-items: center;
+  gap: 16px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--navy);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.ak-social-links a:hover {
+  border-color: rgba(45, 155, 104, 0.35);
+  background: white;
+  box-shadow: 0 15px 35px rgba(12, 32, 48, 0.06);
+  transform: translateX(5px);
+}
+
+.ak-social-icon {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border-radius: 16px;
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.ak-social-links a>span:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.ak-social-links small {
+  color: var(--muted);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.ak-social-links>a>svg {
+  color: var(--green);
+}
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+
+.ak-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 100px;
+  padding-top: 25px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.ak-footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--navy);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+}
+
+.ak-footer-brand span {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--navy);
+  color: white;
+  font-size: 9px;
+}
+
+.ak-footer p,
+.ak-footer>span {
+  margin: 0;
+  font-size: 11px;
+}
+
+/* ==========================================================
+   ANIMATIONS
+   ========================================================== */
+
+@keyframes akFadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes akHeroIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes akFloat {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-30px, 35px);
+  }
+}
+
+@keyframes akPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(45, 155, 104, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 8px rgba(45, 155, 104, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(45, 155, 104, 0);
+  }
+}
+
+@keyframes akRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 850px) {
+  .ak-hero-content {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .ak-intro {
+    padding-left: 155px;
+  }
+
+  .ak-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .ak-about {
+    grid-template-columns: 1fr;
+  }
+
+  .ak-about-text {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .ak-services-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .ak-services-heading h2 {
+    text-align: left;
+  }
+
+  .ak-social {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 640px) {
+  .ak-container {
+    width: min(100% - 24px, 1100px);
+    padding-top: 14px;
+  }
+
+  .ak-brand-symbol {
+    width: 42px;
+    height: 42px;
+  }
+
+  .ak-brand-text strong {
+    font-size: 12px;
+  }
+
+  .ak-website span {
+    display: none;
+  }
+
+  .ak-hero {
+    margin-top: 25px;
+    padding: 24px 18px 20px;
+    border-radius: 25px;
+  }
+
+  .ak-location {
+    font-size: 10px;
+  }
+
+  .ak-availability {
+    max-width: 200px;
+    font-size: 9px;
+  }
+
+  .ak-hero-content {
+    padding: 45px 0 38px;
+  }
+
+  .ak-identity {
+    align-items: center;
+    flex-direction: column;
+    gap: 22px;
+    text-align: center;
+  }
+
+  .ak-avatar-placeholder {
+    width: 112px;
+    height: 112px;
+  }
+
+  .ak-eyebrow {
+    font-size: 8px;
+  }
+
+  .ak-title-block h1 {
+    font-size: clamp(52px, 16vw, 70px);
+    letter-spacing: -3px;
+  }
+
+  .ak-intro {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .ak-intro-line {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .ak-intro>p {
+    margin: 0 auto;
+    font-size: 14px;
+  }
+
+  .ak-role {
+    justify-content: center;
+    font-size: 11px;
+  }
+
+  .ak-primary-action {
+    padding: 14px;
+  }
+
+  .ak-secondary-actions {
+    gap: 8px;
+  }
+
+  .ak-small-action {
+    min-height: 68px;
+  }
+
+  .ak-scroll-indicator {
+    display: none;
+  }
+
+  .ak-about,
+  .ak-services,
+  .ak-industries,
+  .ak-social {
+    margin-top: 85px;
+  }
+
+  .ak-section-content h2,
+  .ak-services h2,
+  .ak-social h2 {
+    font-size: 40px;
+    letter-spacing: -2px;
+  }
+
+  .ak-about-text {
+    margin-top: 28px;
+  }
+
+  .ak-service-list {
+    margin-top: 30px;
+  }
+
+  .ak-service-card {
+    grid-template-columns: 42px 50px 1fr;
+    gap: 12px;
+    padding: 22px 4px;
+  }
+
+  .ak-service-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .ak-service-info h3 {
+    font-size: 16px;
+  }
+
+  .ak-service-info p {
+    font-size: 11px;
+  }
+
+  .ak-service-arrow {
+    display: none;
+  }
+
+  .ak-industries-top {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .ak-industry-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ak-industry-large {
+    grid-column: span 2;
+    grid-row: auto;
+    min-height: 250px;
+  }
+
+  .ak-industry-card {
+    min-height: 155px;
+    padding: 18px;
+  }
+
+  .ak-industry-card h3 {
+    bottom: 18px;
+    left: 18px;
+    font-size: 16px;
+  }
+
+  .ak-industry-large h3 {
+    font-size: 25px;
+  }
+
+  .ak-contact {
+    margin-top: 85px;
+    padding: 35px 22px;
+    border-radius: 26px;
+  }
+
+  .ak-contact-main {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .ak-contact h2 {
+    font-size: 40px;
+    letter-spacing: -2px;
+  }
+
+  .ak-contact-button {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .ak-contact-bottom {
+    margin-top: 45px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .ak-social-links a {
+    grid-template-columns: 46px 1fr 20px;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .ak-social-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .ak-social-links a>span:nth-child(2) {
+    font-size: 13px;
+  }
+
+  .ak-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 70px;
+  }
+
+  .ak-line {
+    display: none;
+  }
+}
+
+/* ==========================================================
+   REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

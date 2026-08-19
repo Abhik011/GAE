@@ -9,7 +9,7 @@ const stats = [
   {
     icon: Globe2,
     value: "30+",
-    label: "Countries",
+    label: "Countries Reached",
   },
   {
     icon: Package,
@@ -19,19 +19,18 @@ const stats = [
   {
     icon: ShieldCheck,
     value: "100%",
-    label: "Verified Suppliers",
+    label: "Supplier Verification",
   },
   {
     icon: Truck,
     value: "24/7",
-    label: "Export Support",
+    label: "Trade Support",
   },
 ];
 
 export default function WhySourcePreview() {
   return (
-    <div className="grid grid-cols-2 gap-6">
-
+    <div className="border-t border-slate-200">
       {stats.map((item) => {
         const Icon = item.icon;
 
@@ -39,34 +38,69 @@ export default function WhySourcePreview() {
           <div
             key={item.label}
             className="
-              rounded-[30px]
-              border
-              border-border
-              bg-white
-              p-8
-              shadow-sm
-              transition-all
+              group
+              flex
+              items-center
+              gap-5
+              border-b
+              border-slate-200
+              py-7
+              transition-colors
               duration-300
-              hover:-translate-y-2
-              hover:shadow-xl
+              hover:border-[#2f7d5c]
             "
           >
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-              <Icon className="size-7" />
+            <div
+              className="
+                flex
+                size-10
+                shrink-0
+                items-center
+                justify-center
+                rounded-full
+                bg-[#2f7d5c]/8
+                text-[#2f7d5c]
+                transition-all
+                duration-300
+                group-hover:bg-[#2f7d5c]
+                group-hover:text-white
+              "
+            >
+              <Icon
+                className="size-[18px]"
+                strokeWidth={1.5}
+              />
             </div>
 
-            <h3 className="mt-8 text-4xl font-black text-slate-900">
-              {item.value}
-            </h3>
+            <div className="flex flex-1 items-end justify-between gap-6">
+              <p
+                className="
+                  text-sm
+                  font-medium
+                  text-slate-500
+                  transition-colors
+                  group-hover:text-[#132838]
+                "
+              >
+                {item.label}
+              </p>
 
-            <p className="mt-2 text-muted-foreground">
-              {item.label}
-            </p>
-
+              <h3
+                className="
+                  font-heading
+                  text-3xl
+                  font-black
+                  tracking-[-0.04em]
+                  text-[#132838]
+                  sm:text-4xl
+                "
+              >
+                {item.value}
+              </h3>
+            </div>
           </div>
         );
       })}
-
     </div>
   );
 }

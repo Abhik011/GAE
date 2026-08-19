@@ -2,46 +2,112 @@ import { Eye } from "lucide-react";
 
 export default function VisionCard() {
   return (
-    <div
+    <article
       className="
         group
-        h-full
-
-        rounded-[32px]
-
-        border
-
-        border-border
-
+        relative
+        min-h-[420px]
         bg-white
-
-        p-10
-
-        transition-all
-
+        p-7
+        transition-colors
         duration-300
-
-        hover:-translate-y-1
-
-        hover:border-primary/20
-
-        hover:shadow-xl
+        hover:bg-[#f8fbf9]
+        sm:p-10
+        lg:p-12
       "
     >
-      <div className="flex size-16 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-        <Eye className="size-8" />
+      {/* Number */}
+      <span
+        className="
+          text-[11px]
+          font-bold
+          tracking-[0.28em]
+          text-[#2f7d5c]
+        "
+      >
+        01
+      </span>
+
+      {/* Icon */}
+      <div
+        className="
+          mt-10
+          flex
+          size-16
+          items-center
+          justify-center
+          rounded-full
+          bg-[#eaf5ef]
+          text-[#2f7d5c]
+          transition-transform
+          duration-300
+          group-hover:scale-110
+        "
+      >
+        <Eye
+          className="size-7"
+          strokeWidth={1.7}
+        />
       </div>
 
-      <h3 className="mt-8 text-3xl font-black">
-        Our Vision
-      </h3>
+      {/* Content */}
+      <div className="mt-12">
+        <p
+          className="
+            text-[10px]
+            font-bold
+            tracking-[0.24em]
+            text-slate-400
+          "
+        >
+          LOOKING AHEAD
+        </p>
 
-      <p className="mt-6 leading-8 text-muted-foreground">
-        To become India's most trusted global sourcing and export
-        platform, connecting world-class manufacturers with
-        international businesses through innovation, transparency,
-        and long-term partnerships.
-      </p>
-    </div>
+        <h3
+          className="
+            mt-4
+            font-heading
+            text-3xl
+            font-black
+            tracking-[-0.035em]
+            text-[#132838]
+            sm:text-4xl
+          "
+        >
+          Our Vision
+        </h3>
+
+        <p
+          className="
+            mt-5
+            max-w-md
+            text-sm
+            leading-7
+            text-slate-500
+            sm:text-base
+            sm:leading-8
+          "
+        >
+          To become India&apos;s trusted global sourcing and export platform,
+          connecting manufacturers with international businesses through
+          transparency, innovation, and long-term partnerships.
+        </p>
+      </div>
+
+      {/* Bottom accent */}
+      <div
+        className="
+          absolute
+          bottom-0
+          left-0
+          h-1
+          w-0
+          bg-[#2f7d5c]
+          transition-all
+          duration-500
+          group-hover:w-full
+        "
+      />
+    </article>
   );
 }

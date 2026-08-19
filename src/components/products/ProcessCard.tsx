@@ -14,49 +14,75 @@ export default function ProcessCard({
   icon: Icon,
 }: ProcessCardProps) {
   return (
-    <div className="group relative">
+    <div
+      className="
+        group
+        border-t
+        border-slate-200
+        pt-7
+        transition-colors
+        duration-300
+        hover:border-[#2f7d5c]
+      "
+    >
+      {/* Top */}
 
-      {/* Connector */}
+      <div className="flex items-start justify-between gap-6">
+        <span
+          className="
+            text-[11px]
+            font-bold
+            tracking-[0.2em]
+            text-slate-400
+            transition-colors
+            duration-300
+            group-hover:text-[#2f7d5c]
+          "
+        >
+          {step}
+        </span>
 
-      <div className="absolute left-8 top-20 hidden h-full w-px bg-border lg:block" />
-
-      <div
-        className="
-          relative
-          rounded-[30px]
-          border
-          border-border
-          bg-white
-          p-8
-          transition-all
-          duration-500
-          hover:-translate-y-2
-          hover:border-primary/20
-          hover:shadow-xl
-        "
-      >
-        <div className="flex items-center justify-between">
-
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-            <Icon className="size-8" />
-          </div>
-
-          <span className="text-5xl font-black text-primary/10">
-            {step}
-          </span>
-
-        </div>
-
-        <h3 className="mt-8 text-2xl font-bold">
-          {title}
-        </h3>
-
-        <p className="mt-5 leading-8 text-muted-foreground">
-          {description}
-        </p>
-
+        <Icon
+          className="
+            size-5
+            text-slate-400
+            transition-all
+            duration-300
+            group-hover:text-[#2f7d5c]
+          "
+          strokeWidth={1.5}
+        />
       </div>
 
+      {/* Content */}
+
+      <h3
+        className="
+          mt-10
+          font-heading
+          text-2xl
+          font-bold
+          tracking-[-0.03em]
+          text-[#132838]
+          transition-colors
+          duration-300
+          group-hover:text-[#2f7d5c]
+        "
+      >
+        {title}
+      </h3>
+
+      <p
+        className="
+          mt-4
+          max-w-sm
+          text-sm
+          leading-7
+          text-slate-500
+        "
+      >
+        {description}
+      </p>
     </div>
   );
 }

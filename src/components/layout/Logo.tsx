@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-
+import "../../app/abhijeet-kulkarni/abhijeet-kulkarni.css";
 import { company } from "@/config/company";
 
 export default function Logo() {
@@ -8,6 +8,7 @@ export default function Logo() {
     <Link
       href="/"
       className="flex shrink-0 items-center gap-3"
+      aria-label={`${company.shortName} Home`}
     >
       <Image
         src="/logos/logo.svg"
@@ -18,36 +19,12 @@ export default function Logo() {
         className="h-11 w-auto md:h-12 lg:h-14"
       />
 
-      <div className="hidden min-[480px]:block">
-
-        <h1
-          className="
-            font-heading
-            text-l
-            font-black
-            leading-none
-            tracking-tight
-            lg:text-l
-          "
-        >
-          <span className="text-slate-900">
-            GLOBAL
-          </span>
-
-          <span className="text-primary">
-            ATLAS
-          </span>{" "}
-
-          <span className="text-slate-900">
-            EXIM
-          </span>
-
-        </h1>
-
-       
-
+      <div className="block">
+        <span className="ak-brand-text">
+          <strong>GLOBALATLAS</strong>
+          <small>EXIM</small>
+        </span>
       </div>
-
     </Link>
   );
 }

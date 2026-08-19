@@ -1,35 +1,29 @@
 import AboutHero from "@/components/about/AboutHero";
 import CompanyIntro from "@/components/about/CompanyIntro";
-import OurStory from "@/components/about/OurStory";
 import VisionMission from "@/components/about/VisionMission";
 import WhyGlobalAtlas from "@/components/about/WhyGlobalAtlas";
-import CoreValues from "@/components/about/CoreValues";
-import GlobalPresence from "@/components/about/GlobalPresence";
 import Leadership from "@/components/about/Leadership";
-import Certifications from "@/components/about/Certifications";
 import AboutCTA from "@/components/about/AboutCTA";
 
 export default function AboutPage() {
   return (
     <>
+      {/* 01 — Introduction */}
       <AboutHero />
 
+      {/* 02 — Who We Are */}
       <CompanyIntro />
 
-      <OurStory />
-
+      {/* 03 — Our Direction */}
       <VisionMission />
 
+      {/* 04 — Why GlobalAtlas */}
       <WhyGlobalAtlas />
 
-      <CoreValues />
-
-      <GlobalPresence />
-
+      {/* 05 — Leadership */}
       <Leadership />
 
-      <Certifications />
-
+      {/* 06 — Start a Conversation */}
       <AboutCTA />
     </>
   );
