@@ -149,9 +149,8 @@ export default function HomePage() {
             {/* Content */}
             <div className="ga-hero-copy">
               <div className="ga-hero-label">
-                <span>01</span>
                 <div />
-                <p>IMPORT · EXPORT · SOURCING</p>
+            
               </div>
               <br />
               <h1 className="ga-hero-title">
@@ -257,23 +256,7 @@ export default function HomePage() {
 
           {/* Bottom */}
           <div className="ga-hero-bottom">
-            <div className="ga-hero-tags">
-              <span>
-                <Check size={14} />
-                Global Sourcing
-              </span>
-
-              <span>
-                <Check size={14} />
-                Trade Connections
-              </span>
-
-              <span>
-                <Check size={14} />
-                Market Opportunities
-              </span>
-            </div>
-
+           
             <p className="ga-scroll-indicator">
               <span>SCROLL TO EXPLORE</span>
               <ArrowDownRight size={16} />

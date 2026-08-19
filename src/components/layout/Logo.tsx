@@ -22,7 +22,7 @@ export default function Logo() {
       <div className="block">
         <span className="ak-brand-text">
           <strong>GLOBALATLAS</strong>
-          <small>EXIM</small>
+         <small style={{ color: "#2d9b68" }}>EXIM</small>
         </span>
       </div>
     </Link>

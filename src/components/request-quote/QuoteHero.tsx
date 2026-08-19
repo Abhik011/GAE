@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/buttons/button";
 const highlights = [
   "Suitable Indian manufacturers",
   "Competitive quotations",
-  "Supplier verification support",
+  "Supplier verification",
   "Export coordination",
 ];
 
@@ -38,127 +38,221 @@ const steps = [
 
 export default function QuoteHero() {
   return (
-    <section className="relative overflow-hidden bg-slate-50 pt-32 pb-20 lg:min-h-screen lg:py-0 lg:flex lg:items-center">
-      {/* Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(47,125,92,0.08),transparent_35%)]" />
+    <section className="relative flex min-h-[100svh] overflow-hidden bg-white">
+      {/* Subtle GlobalAtlas background glow */}
+      <div className="pointer-events-none absolute inset-0">
+        <div
+          className="
+            absolute
+            right-[-12%]
+            top-[8%]
+            size-[520px]
+            rounded-full
+            bg-[#e9f7ef]
+            blur-[110px]
+            opacity-70
+          "
+        />
+
+        <div
+          className="
+            absolute
+            bottom-[-20%]
+            left-[-10%]
+            size-[420px]
+            rounded-full
+            bg-[#18364a]
+            blur-[160px]
+            opacity-[0.04]
+          "
+        />
+      </div>
 
       <Container>
-        <div className="relative grid items-center gap-16 lg:grid-cols-2">
-          {/* Left */}
-          <div>
-            <div className="flex items-center gap-4">
-              <span className="text-[11px] font-bold tracking-[0.28em] text-[#2f7d5c]">
-                REQUEST A QUOTE
-              </span>
+        <div className="relative flex min-h-[100svh] items-center py-28 lg:py-20">
+          <div className="grid w-full items-center gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-24">
 
-              <span className="h-px w-10 bg-[#2f7d5c]/30" />
-            </div>
+            {/* Left Content */}
+            <div className="max-w-2xl">
+              <div className="flex items-center gap-3">
+                <span className="size-2 rounded-full bg-[#2d9b68]" />
 
-            <h1 className="mt-6 font-heading text-4xl font-black leading-[1.05] tracking-[-0.04em] text-[#132838] sm:text-5xl lg:text-6xl">
-              Find the right products
-              <span className="block text-[#2f7d5c]">
-                from India.
-              </span>
-            </h1>
+                <p className="text-[10px] font-bold tracking-[0.24em] text-[#2d9b68]">
+                  REQUEST A QUOTE
+                </p>
+              </div>
 
-            <p className="mt-6 max-w-xl text-base leading-8 text-slate-500 lg:text-lg">
-              Share your sourcing requirements and let us help you identify
-              suitable Indian manufacturers and coordinate your export needs.
-            </p>
+              <h1 className="mt-6 font-heading text-5xl font-black leading-[0.98] tracking-[-0.05em] text-[#0c2030] sm:text-6xl lg:text-7xl xl:text-8xl">
+                Find the right
+         <span
+  className="
+    block
 
-            {/* Highlights */}
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              {highlights.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-3 text-sm font-medium text-slate-600"
-                >
-                  <span className="flex size-5 items-center justify-center rounded-full bg-[#2f7d5c]/10 text-[#2f7d5c]">
-                    <Check className="size-3" />
-                  </span>
+  "
+>
+  products from
+</span>
 
-                  {item}
-                </div>
-              ))}
-            </div>
+                <span className="block font-normal text-[#2d9b68]">
+                  India.
+                </span>
+              </h1>
 
-            {/* Actions */}
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Link href="#quote-form">
-                <Button
-                  size="lg"
-                  className="h-12 rounded-xl px-6"
-                >
-                  Request a Quote
-                  <ArrowRight className="ml-2 size-4" />
-                </Button>
-              </Link>
+              <p className="mt-7 max-w-xl text-base leading-8 text-[#284b62] lg:text-lg">
+                Share your sourcing requirements and explore suitable Indian
+                manufacturers for your business.
+              </p>
 
-              <Link href="/contact">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="h-12 rounded-xl border-slate-300 px-6"
+              {/* Highlights */}
+              <div className="mt-10 grid gap-x-8 gap-y-4 sm:grid-cols-2">
+                {highlights.map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-3 text-sm font-medium text-[#18364a]"
+                  >
+                    <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-[#e9f7ef] text-[#2d9b68]">
+                      <Check className="size-3.5" strokeWidth={2.2} />
+                    </span>
+
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Actions */}
+              <div className="mt-12 flex flex-wrap items-center gap-7">
+                <Link href="#quote-form">
+                  <Button
+                    size="lg"
+                    className="
+                      group
+                      h-14
+                      rounded-none
+                      bg-[#0c2030]
+                      px-7
+                      text-white
+                      transition-all
+                      duration-300
+                      hover:bg-[#2d9b68]
+                    "
+                  >
+                    Request a Quote
+
+                    <ArrowRight
+                      className="
+                        ml-3
+                        size-4
+                        transition-transform
+                        duration-300
+                        group-hover:translate-x-1
+                      "
+                    />
+                  </Button>
+                </Link>
+
+                <Link
+                  href="/contact"
+                  className="
+                    group
+                    inline-flex
+                    items-center
+                    gap-2.5
+                    text-sm
+                    font-semibold
+                    text-[#0c2030]
+                    transition-colors
+                    duration-300
+                    hover:text-[#2d9b68]
+                  "
                 >
                   Talk to Us
-                </Button>
-              </Link>
-            </div>
-          </div>
 
-          {/* Right */}
-          <div className="lg:pl-8">
-            <div className="overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-sm">
-              <div className="border-b border-slate-100 p-7 sm:p-8">
-                <span className="text-[10px] font-bold tracking-[0.22em] text-[#2f7d5c]">
-                  SIMPLE PROCESS
-                </span>
-
-                <h2 className="mt-3 font-heading text-2xl font-bold tracking-[-0.03em] text-[#132838] sm:text-3xl">
-                  From requirement to quote.
-                </h2>
-
-                <p className="mt-3 text-sm leading-7 text-slate-500">
-                  A straightforward starting point for your sourcing journey.
-                </p>
+                  <ArrowRight
+                    className="
+                      size-4
+                      transition-transform
+                      duration-300
+                      group-hover:translate-x-1
+                    "
+                  />
+                </Link>
               </div>
+            </div>
 
-              <div>
-                {steps.map((step, index) => {
-                  const Icon = step.icon;
+            {/* Right Process */}
+            <div className="w-full lg:justify-self-end lg:max-w-lg">
+              <div className="border-t border-[#0c2030]/10">
 
-                  return (
-                    <div
-                      key={step.title}
-                      className="group flex gap-5 border-b border-slate-100 p-7 last:border-0 transition-colors hover:bg-slate-50 sm:p-8"
-                    >
-                      <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#2f7d5c]/10 text-[#2f7d5c] transition-all group-hover:bg-[#2f7d5c] group-hover:text-white">
-                        <Icon className="size-5" strokeWidth={1.7} />
-                      </div>
+                {/* Process Header */}
+                <div className="py-8">
+                  <div className="flex items-center gap-3">
+                    <span className="h-px w-8 bg-[#2d9b68]" />
 
-                      <div>
-                        <span className="text-[10px] font-bold tracking-[0.2em] text-slate-300">
-                          0{index + 1}
+                    <p className="text-[10px] font-bold tracking-[0.22em] text-[#2d9b68]">
+                      HOW IT WORKS
+                    </p>
+                  </div>
+
+                  <h2 className="mt-5 font-heading text-3xl font-bold leading-tight tracking-[-0.04em] text-[#0c2030] sm:text-4xl">
+                    From requirement
+                    <span className="block font-normal text-[#284b62]">
+                      to the right quote.
+                    </span>
+                  </h2>
+                </div>
+
+                {/* Steps */}
+                <div>
+                  {steps.map((step, index) => {
+                    const Icon = step.icon;
+
+                    return (
+                      <div
+                        key={step.title}
+                        className="
+                          grid
+                          grid-cols-[32px_38px_1fr]
+                          gap-4
+                          border-t
+                          border-[#0c2030]/10
+                          py-8
+                        "
+                      >
+                        {/* Number */}
+                        <span className="pt-1 text-[10px] font-bold tracking-[0.14em] text-[#2d9b68]">
+                          {String(index + 1).padStart(2, "0")}
                         </span>
 
-                        <h3 className="mt-1 text-base font-bold text-[#132838]">
-                          {step.title}
-                        </h3>
+                        {/* Icon */}
+                        <div className="flex pt-0.5 text-[#2d9b68]">
+                          <Icon
+                            className="size-5"
+                            strokeWidth={1.7}
+                          />
+                        </div>
 
-                        <p className="mt-1 text-sm leading-6 text-slate-500">
-                          {step.description}
-                        </p>
+                        {/* Content */}
+                        <div>
+                          <h3 className="text-[15px] font-bold text-[#0c2030]">
+                            {step.title}
+                          </h3>
+
+                          <p className="mt-2 text-sm leading-6 text-[#284b62]">
+                            {step.description}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
-              </div>
+                    );
+                  })}
+                </div>
 
-              <div className="bg-[#132838] px-7 py-5 sm:px-8">
-                <p className="text-sm text-slate-300">
-                  Start with your requirements. We'll help you explore the
-                  next steps.
-                </p>
+                {/* Bottom Note */}
+                <div className="border-t border-[#0c2030]/10 pt-7">
+                  <p className="max-w-md text-sm leading-7 text-[#284b62]">
+                    Start with your requirements. We&apos;ll help you explore
+                    suitable sourcing options and understand the next steps.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
